@@ -2,95 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Google ADK Visual Builder Design System
+   Professional design with Google Material colors and modern typography
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main background and surfaces */
+    --background: 0 0% 99%;
+    --foreground: 220 13% 18%;
+    --surface: 0 0% 100%;
+    --surface-dim: 220 9% 97%;
+    --surface-bright: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Google Brand Colors (ADK Theme) */
+    --google-blue: 217 89% 61%;
+    --google-blue-dark: 217 89% 51%;
+    --google-green: 142 76% 36%;
+    --google-yellow: 45 100% 51%;
+    --google-red: 4 90% 58%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Primary brand colors */
+    --primary: 217 89% 61%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 89% 51%;
+    --primary-muted: 217 89% 61% / 0.1;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Agent type colors */
+    --agent-llm: 217 89% 61%;
+    --agent-sequential: 142 76% 36%;
+    --agent-parallel: 45 100% 51%;
+    --agent-loop: 4 90% 58%;
+    --agent-tool: 262 83% 58%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Semantic colors */
+    --secondary: 220 9% 97%;
+    --secondary-foreground: 220 13% 18%;
+    
+    --muted: 220 9% 97%;
+    --muted-foreground: 220 9% 46%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 217 89% 61% / 0.05;
+    --accent-foreground: 217 89% 61%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --warning: 45 100% 51%;
+    --warning-foreground: 45 100% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Border and inputs */
+    --border: 220 13% 91%;
+    --border-strong: 220 13% 82%;
+    --input: 220 13% 91%;
+    --ring: 217 89% 61%;
+
+    /* Canvas specific */
+    --canvas-background: 220 9% 98%;
+    --canvas-grid: 220 13% 91%;
+    --canvas-selection: 217 89% 61%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 220 13% 18%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-hover: 220 9% 97%;
+    --sidebar-active: 217 89% 61% / 0.1;
+
+    /* Properties panel */
+    --properties-background: 0 0% 99%;
+    --properties-border: 220 13% 91%;
+
+    /* Code editor */
+    --code-background: 220 13% 18%;
+    --code-foreground: 220 9% 97%;
+
+    /* Shadows and elevation */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--google-blue)), hsl(var(--google-blue-dark)));
+    --gradient-canvas: linear-gradient(180deg, hsl(var(--canvas-background)), hsl(var(--surface-dim)));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.15), transparent 70%);
+
+    /* Animations */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme for ADK Visual Builder */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 97%;
+    --surface: 220 13% 11%;
+    --surface-dim: 220 13% 7%;
+    --surface-bright: 220 13% 15%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Keep Google brand colors but adjust for dark mode */
+    --google-blue: 217 89% 71%;
+    --google-green: 142 76% 46%;
+    --google-yellow: 45 100% 61%;
+    --google-red: 4 90% 68%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 217 89% 71%;
+    --primary-foreground: 220 13% 9%;
+    --primary-hover: 217 89% 61%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 9% 97%;
+    
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 64%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --accent: 217 89% 71% / 0.1;
+    --accent-foreground: 217 89% 71%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --destructive: 4 90% 68%;
+    --destructive-foreground: 220 13% 9%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --border: 220 13% 20%;
+    --border-strong: 220 13% 25%;
+    --input: 220 13% 20%;
+    --ring: 217 89% 71%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Dark canvas */
+    --canvas-background: 220 13% 8%;
+    --canvas-grid: 220 13% 18%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark sidebar */
+    --sidebar-background: 220 13% 10%;
+    --sidebar-foreground: 220 9% 97%;
+    --sidebar-border: 220 13% 18%;
+    --sidebar-hover: 220 13% 15%;
+    --sidebar-active: 217 89% 71% / 0.15;
+
+    /* Dark properties panel */
+    --properties-background: 220 13% 10%;
+    --properties-border: 220 13% 18%;
+
+    /* Dark code editor */
+    --code-background: 220 13% 6%;
+    --code-foreground: 220 9% 97%;
   }
 }
 
@@ -100,6 +161,136 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
+}
+
+@layer components {
+  /* Agent Node Animations */
+  .agent-node {
+    @apply transition-all duration-300 ease-in-out;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .agent-node:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .agent-node.executing {
+    @apply animate-pulse;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .agent-node.error {
+    @apply animate-bounce;
+    box-shadow: 0 0 20px hsl(var(--destructive) / 0.5);
+  }
+
+  /* Canvas Grid Pattern */
+  .canvas-grid {
+    background-image: 
+      linear-gradient(hsl(var(--canvas-grid)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--canvas-grid)) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Sidebar Component Hover */
+  .component-item {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .component-item:hover {
+    @apply bg-sidebar-hover scale-102 shadow-md;
+  }
+
+  /* Connection Animation */
+  .react-flow__edge.animated {
+    stroke-dasharray: 5;
+    animation: dashdraw 1s linear infinite;
+  }
+
+  /* Glow Effect for Active Nodes */
+  .node-glow {
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.3));
+  }
+
+  /* Floating Action Buttons */
+  .fab {
+    @apply fixed z-50 w-14 h-14 rounded-full shadow-xl transition-all duration-300;
+    background: var(--gradient-primary);
+  }
+
+  .fab:hover {
+    @apply scale-110 shadow-2xl;
+  }
+
+  /* Code Editor Theme */
+  .code-editor {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  /* Properties Panel Sections */
+  .property-section {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .property-section.collapsed {
+    @apply opacity-60;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes dashdraw {
+    from { stroke-dashoffset: 10; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4);
+    }
+  }
+
+  /* Utility classes */
+  .font-inter { font-family: 'Inter', sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  
+  .scale-102 { transform: scale(1.02); }
+  .animate-fade-in-up { animation: fadeInUp 0.3s ease-out; }
+  .animate-slide-in-right { animation: slideInRight 0.3s ease-out; }
+  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+  /* Agent type colors */
+  .agent-llm { border-color: hsl(var(--agent-llm)); }
+  .agent-sequential { border-color: hsl(var(--agent-sequential)); }
+  .agent-parallel { border-color: hsl(var(--agent-parallel)); }
+  .agent-loop { border-color: hsl(var(--agent-loop)); }
+  .agent-tool { border-color: hsl(var(--agent-tool)); }
 }
