@@ -21,7 +21,7 @@ export const ADKBuilder: React.FC = () => {
   }, [initializeComponentLibrary]);
 
   return (
-    <div className="w-full h-screen bg-background flex flex-col font-inter">
+    <div className="w-full h-screen bg-background flex flex-col font-inter overflow-hidden">
       {/* Header */}
       <Header />
       
