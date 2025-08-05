@@ -40,8 +40,16 @@ export const ToolNode: React.FC<NodeProps> = ({ data, selected }) => {
         
         <div className="flex items-center gap-1 text-xs text-muted-foreground">
           <Wrench className="h-3 w-3" />
-          <span>Tool Function</span>
+          <span>{config.tool_type ? `${config.tool_type} tool` : 'Tool Function'}</span>
         </div>
+        
+        {config.requires_gemini_2 && (
+          <div className="mt-1">
+            <Badge variant="secondary" className="text-xs">
+              Gemini 2.0 Required
+            </Badge>
+          </div>
+        )}
       </CardContent>
       
       {/* Tool connection handle */}

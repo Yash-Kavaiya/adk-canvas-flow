@@ -25,6 +25,9 @@ export interface AgentConfig {
     category: string;
     threshold: 'OFF' | 'LOW' | 'MEDIUM' | 'HIGH';
   }>;
+  // Tool-specific properties
+  tool_type?: string;
+  requires_gemini_2?: boolean;
 }
 
 export interface ComponentLibraryItem {
@@ -161,17 +164,64 @@ const defaultComponentLibrary: ComponentLibraryItem[] = [
       }
     }
   },
+  // Function Tools
   {
-    id: 'web-search-tool',
+    id: 'function-tool',
     type: 'tool',
-    name: 'Web Search',
-    icon: '🔍',
+    name: 'Function Tool',
+    icon: '⚙️',
     color: 'hsl(var(--agent-tool))',
-    description: 'Search the web for information',
+    description: 'Custom Python function as agent tool',
     category: 'tools',
     defaultConfig: {
       type: 'tool',
-      name: 'web_search',
+      name: 'custom_function',
+      tool_type: 'function'
+    }
+  },
+  {
+    id: 'long-running-tool',
+    type: 'tool',
+    name: 'Long Running Tool',
+    icon: '⏳',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Long-running operation with status tracking',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'long_running_operation',
+      tool_type: 'long_running'
+    }
+  },
+  {
+    id: 'agent-as-tool',
+    type: 'tool',
+    name: 'Agent as Tool',
+    icon: '🤖',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Wrap another agent as a tool',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'agent_tool',
+      tool_type: 'agent'
+    }
+  },
+  
+  // Built-in Tools
+  {
+    id: 'google-search-tool',
+    type: 'tool',
+    name: 'Google Search',
+    icon: '🔍',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Search the web using Google Search (Gemini 2.0 only)',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'google_search',
+      tool_type: 'builtin',
+      requires_gemini_2: true
     }
   },
   {
@@ -180,11 +230,248 @@ const defaultComponentLibrary: ComponentLibraryItem[] = [
     name: 'Code Execution',
     icon: '💻',
     color: 'hsl(var(--agent-tool))',
-    description: 'Execute code in a sandboxed environment',
+    description: 'Execute Python code in sandboxed environment',
     category: 'tools',
     defaultConfig: {
       type: 'tool',
       name: 'code_execution',
+      tool_type: 'builtin'
+    }
+  },
+  {
+    id: 'vertex-ai-search-tool',
+    type: 'tool',
+    name: 'Vertex AI Search',
+    icon: '📚',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Search across private data stores with grounding',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'vertex_ai_search',
+      tool_type: 'builtin'
+    }
+  },
+  {
+    id: 'bigquery-toolset',
+    type: 'tool',
+    name: 'BigQuery Toolset',
+    icon: '📊',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Query and analyze data in BigQuery',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'bigquery_tools',
+      tool_type: 'toolset'
+    }
+  },
+  
+  // Third-Party Integration Tools
+  {
+    id: 'langchain-tool',
+    type: 'tool',
+    name: 'LangChain Tool',
+    icon: '🔗',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Integrate any LangChain BaseTool',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'langchain_integration',
+      tool_type: 'langchain'
+    }
+  },
+  {
+    id: 'crewai-tool',
+    type: 'tool',
+    name: 'CrewAI Tool',
+    icon: '🚢',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Integrate CrewAI tools with custom metadata',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'crewai_integration',
+      tool_type: 'crewai'
+    }
+  },
+  
+  // Google Cloud Tools
+  {
+    id: 'apigee-hub-tool',
+    type: 'tool',
+    name: 'Apigee API Hub',
+    icon: '🌐',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Tools from Apigee API Hub with authentication',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'apigee_hub_tools',
+      tool_type: 'apigee'
+    }
+  },
+  {
+    id: 'app-integration-tool',
+    type: 'tool',
+    name: 'Application Integration',
+    icon: '🔄',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Connect to Salesforce, SAP, and other systems',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'app_integration',
+      tool_type: 'integration'
+    }
+  },
+  {
+    id: 'toolbox-database-tool',
+    type: 'tool',
+    name: 'Toolbox Database',
+    icon: '🗄️',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Connect to databases via Toolbox server',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'toolbox_database',
+      tool_type: 'toolbox'
+    }
+  },
+  
+  // MCP Tools
+  {
+    id: 'mcp-client-tool',
+    type: 'tool',
+    name: 'MCP Client',
+    icon: '🔌',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Connect to Model Context Protocol servers',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'mcp_client',
+      tool_type: 'mcp_client'
+    }
+  },
+  {
+    id: 'mcp-server-tool',
+    type: 'tool',
+    name: 'MCP Server',
+    icon: '🖥️',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Expose ADK tools as MCP server',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'mcp_server',
+      tool_type: 'mcp_server'
+    }
+  },
+  
+  // OpenAPI Tools
+  {
+    id: 'openapi-toolset',
+    type: 'tool',
+    name: 'OpenAPI Toolset',
+    icon: '📋',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Auto-generate tools from OpenAPI specifications',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'openapi_tools',
+      tool_type: 'openapi'
+    }
+  },
+  {
+    id: 'rest-api-tool',
+    type: 'tool',
+    name: 'REST API Tool',
+    icon: '🌍',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Generic REST API client with authentication',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'rest_api_client',
+      tool_type: 'rest_api'
+    }
+  },
+  
+  // Authentication Tools
+  {
+    id: 'oauth2-auth-tool',
+    type: 'tool',
+    name: 'OAuth2 Authentication',
+    icon: '🔐',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Handle OAuth2 authentication flows',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'oauth2_auth',
+      tool_type: 'auth'
+    }
+  },
+  {
+    id: 'service-account-tool',
+    type: 'tool',
+    name: 'Service Account Auth',
+    icon: '🗝️',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Authenticate using Google Service Account',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'service_account_auth',
+      tool_type: 'service_account'
+    }
+  },
+  
+  // Specialized Domain Tools
+  {
+    id: 'file-operations-tool',
+    type: 'tool',
+    name: 'File Operations',
+    icon: '📁',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Read, write, and manipulate files',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'file_operations',
+      tool_type: 'file_system'
+    }
+  },
+  {
+    id: 'email-tool',
+    type: 'tool',
+    name: 'Email Integration',
+    icon: '📧',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Send and manage emails',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'email_integration',
+      tool_type: 'email'
+    }
+  },
+  {
+    id: 'calendar-tool',
+    type: 'tool',
+    name: 'Calendar Integration',
+    icon: '📅',
+    color: 'hsl(var(--agent-tool))',
+    description: 'Manage calendar events and scheduling',
+    category: 'tools',
+    defaultConfig: {
+      type: 'tool',
+      name: 'calendar_integration',
+      tool_type: 'calendar'
     }
   }
 ];
