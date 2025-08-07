@@ -31,6 +31,7 @@ const getId = () => `node_${nodeId++}`;
 
 export const CanvasArea: React.FC = () => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
+  const [isDraggingOver, setIsDraggingOver] = React.useState(false);
   const { 
     nodes,
     edges,
@@ -77,11 +78,18 @@ export const CanvasArea: React.FC = () => {
   const onDragOver = useCallback((event: React.DragEvent) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
+    setIsDraggingOver(true);
+  }, []);
+
+  const onDragLeave = useCallback((event: React.DragEvent) => {
+    event.preventDefault();
+    setIsDraggingOver(false);
   }, []);
 
   const onDrop = useCallback(
     (event: React.DragEvent) => {
       event.preventDefault();
+      setIsDraggingOver(false);
 
       const reactFlowBounds = reactFlowWrapper.current?.getBoundingClientRect();
       if (!reactFlowBounds) return;
@@ -159,7 +167,10 @@ export const CanvasArea: React.FC = () => {
   }, [selectNode]);
 
   return (
-    <div className="flex-1 relative" ref={reactFlowWrapper}>
+    <div 
+      className="flex-1 relative" 
+      ref={reactFlowWrapper}
+    >
       <ReactFlow
         nodes={localNodes}
         edges={localEdges}
@@ -168,30 +179,32 @@ export const CanvasArea: React.FC = () => {
         onConnect={onConnect}
         onDrop={onDrop}
         onDragOver={onDragOver}
+        onDragLeave={onDragLeave}
         onNodeClick={onNodeClick}
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
         fitView
-        className="canvas-grid"
+        className={`canvas-grid ${isDraggingOver ? 'drag-over' : ''}`}
+        data-dropping={isDraggingOver}
       >
         <Controls 
-          className="bg-surface border border-border rounded-lg shadow-lg"
+          className="md-surface-container-high border border-md-sys-color-outline-variant/30 rounded-lg md-elevation-2"
           showInteractive={false}
         />
         <MiniMap
-          className="bg-surface border border-border rounded-lg overflow-hidden"
+          className="md-surface-container-high border border-md-sys-color-outline-variant/30 rounded-lg overflow-hidden md-elevation-2"
           zoomable
           pannable
           nodeColor={(node) => {
             const nodeData = node.data as any;
-            return nodeData.color || '#94a3b8';
+            return nodeData.color || 'rgb(var(--md-sys-color-primary))';
           }}
         />
         <Background 
           variant={BackgroundVariant.Dots}
-          gap={20}
-          size={1}
-          color="hsl(var(--canvas-grid))"
+          gap={24}
+          size={1.2}
+          color="rgb(var(--md-sys-color-outline-variant))"
         />
       </ReactFlow>
     </div>

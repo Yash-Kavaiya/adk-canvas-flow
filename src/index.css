@@ -10,27 +10,169 @@
 
 @layer base {
   :root {
-    /* Google Material Design 3 Color Scheme */
-    --background: 248 250 252;           /* slate-50 equivalent */
-    --foreground: 15 23 42;              /* slate-800 equivalent */
-    --surface: 255 255 255;              /* pure white */
-    --surface-dim: 241 245 249;          /* slate-100 equivalent */
-    --surface-bright: 255 255 255;       /* pure white */
-    --surface-container: 248 250 252;    /* slate-50 equivalent */
-    --surface-container-high: 241 245 249; /* slate-100 equivalent */
+    /* Material Design 3 Primary Color Palette (Google Blue #1a73e8) */
+    --md-sys-color-primary-0: 0 0 0;                    /* Black */
+    --md-sys-color-primary-10: 1 15 38;                 /* Very dark blue */
+    --md-sys-color-primary-20: 1 28 54;                 /* Dark blue */
+    --md-sys-color-primary-30: 10 55 104;               /* Medium dark blue */
+    --md-sys-color-primary-40: 26 115 232;              /* Google Blue #1a73e8 */
+    --md-sys-color-primary-50: 66 133 244;              /* Google Blue Light */
+    --md-sys-color-primary-60: 103 157 250;             /* Light blue */
+    --md-sys-color-primary-70: 138 180 248;             /* Lighter blue */
+    --md-sys-color-primary-80: 174 203 250;             /* Very light blue */
+    --md-sys-color-primary-90: 220 237 255;             /* Almost white blue */
+    --md-sys-color-primary-95: 240 247 255;             /* Nearly white blue */
+    --md-sys-color-primary-99: 251 253 255;             /* White with blue tint */
+    --md-sys-color-primary-100: 255 255 255;            /* Pure white */
+
+    /* Material Design 3 Secondary Color Palette (Google Gray) */
+    --md-sys-color-secondary-0: 0 0 0;                  /* Black */
+    --md-sys-color-secondary-10: 22 26 31;              /* Very dark gray */
+    --md-sys-color-secondary-20: 41 50 65;              /* Dark gray */
+    --md-sys-color-secondary-30: 64 71 88;              /* Medium dark gray */
+    --md-sys-color-secondary-40: 95 99 104;             /* Google Gray */
+    --md-sys-color-secondary-50: 128 134 139;           /* Medium gray */
+    --md-sys-color-secondary-60: 154 160 166;           /* Light gray */
+    --md-sys-color-secondary-70: 189 193 198;           /* Lighter gray */
+    --md-sys-color-secondary-80: 218 220 224;           /* Very light gray */
+    --md-sys-color-secondary-90: 238 239 241;           /* Almost white gray */
+    --md-sys-color-secondary-95: 248 249 250;           /* Nearly white gray */
+    --md-sys-color-secondary-99: 254 254 254;           /* White with gray tint */
+    --md-sys-color-secondary-100: 255 255 255;          /* Pure white */
+
+    /* Material Design 3 Tertiary Color Palette (Google Green) */
+    --md-sys-color-tertiary-0: 0 0 0;                   /* Black */
+    --md-sys-color-tertiary-10: 14 44 21;               /* Very dark green */
+    --md-sys-color-tertiary-20: 21 68 32;               /* Dark green */
+    --md-sys-color-tertiary-30: 27 94 32;               /* Medium dark green */
+    --md-sys-color-tertiary-40: 52 168 83;              /* Google Green #34a853 */
+    --md-sys-color-tertiary-50: 76 175 80;              /* Medium green */
+    --md-sys-color-tertiary-60: 129 201 149;            /* Light green */
+    --md-sys-color-tertiary-70: 165 214 167;            /* Lighter green */
+    --md-sys-color-tertiary-80: 200 230 201;            /* Very light green */
+    --md-sys-color-tertiary-90: 232 245 233;            /* Almost white green */
+    --md-sys-color-tertiary-95: 243 250 244;            /* Nearly white green */
+    --md-sys-color-tertiary-99: 253 254 253;            /* White with green tint */
+    --md-sys-color-tertiary-100: 255 255 255;           /* Pure white */
+
+    /* Material Design 3 Error Color Palette (Google Red) */
+    --md-sys-color-error-0: 0 0 0;                      /* Black */
+    --md-sys-color-error-10: 65 14 11;                  /* Very dark red */
+    --md-sys-color-error-20: 96 20 16;                  /* Dark red */
+    --md-sys-color-error-30: 147 0 10;                  /* Medium dark red */
+    --md-sys-color-error-40: 234 67 53;                 /* Google Red #ea4335 */
+    --md-sys-color-error-50: 244 67 54;                 /* Medium red */
+    --md-sys-color-error-60: 239 83 80;                 /* Light red */
+    --md-sys-color-error-70: 242 184 181;               /* Lighter red */
+    --md-sys-color-error-80: 249 222 220;               /* Very light red */
+    --md-sys-color-error-90: 252 238 238;               /* Almost white red */
+    --md-sys-color-error-95: 254 247 247;               /* Nearly white red */
+    --md-sys-color-error-99: 255 253 253;               /* White with red tint */
+    --md-sys-color-error-100: 255 255 255;              /* Pure white */
+
+    /* Material Design 3 Warning Color Palette (Professional Amber) */
+    --md-sys-color-warning-0: 0 0 0;                    /* Black */
+    --md-sys-color-warning-10: 25 17 8;                 /* Very dark amber */
+    --md-sys-color-warning-20: 51 34 16;                /* Dark amber */
+    --md-sys-color-warning-30: 76 51 24;                /* Medium dark amber */
+    --md-sys-color-warning-40: 217 119 6;               /* Professional amber #d97706 */
+    --md-sys-color-warning-50: 245 158 11;              /* Medium amber */
+    --md-sys-color-warning-60: 251 191 36;              /* Light amber */
+    --md-sys-color-warning-70: 252 211 77;              /* Lighter amber */
+    --md-sys-color-warning-80: 254 230 138;             /* Very light amber */
+    --md-sys-color-warning-90: 255 243 199;             /* Almost white amber */
+    --md-sys-color-warning-95: 255 251 235;             /* Nearly white amber */
+    --md-sys-color-warning-99: 255 254 251;             /* White with amber tint */
+    --md-sys-color-warning-100: 255 255 255;            /* Pure white */
+
+    /* Material Design 3 Core Color Tokens (Light Theme) */
+    --md-sys-color-primary: var(--md-sys-color-primary-40);
+    --md-sys-color-on-primary: var(--md-sys-color-primary-100);
+    --md-sys-color-primary-container: var(--md-sys-color-primary-90);
+    --md-sys-color-on-primary-container: var(--md-sys-color-primary-10);
+    
+    --md-sys-color-secondary: var(--md-sys-color-secondary-40);
+    --md-sys-color-on-secondary: var(--md-sys-color-secondary-100);
+    --md-sys-color-secondary-container: var(--md-sys-color-secondary-90);
+    --md-sys-color-on-secondary-container: var(--md-sys-color-secondary-10);
+    
+    --md-sys-color-tertiary: var(--md-sys-color-tertiary-40);
+    --md-sys-color-on-tertiary: var(--md-sys-color-tertiary-100);
+    --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-90);
+    --md-sys-color-on-tertiary-container: var(--md-sys-color-tertiary-10);
+    
+    --md-sys-color-error: var(--md-sys-color-error-40);
+    --md-sys-color-on-error: var(--md-sys-color-error-100);
+    --md-sys-color-error-container: var(--md-sys-color-error-90);
+    --md-sys-color-on-error-container: var(--md-sys-color-error-10);
+    
+    --md-sys-color-warning: var(--md-sys-color-warning-40);
+    --md-sys-color-on-warning: var(--md-sys-color-warning-10);
+    --md-sys-color-warning-container: var(--md-sys-color-warning-90);
+    --md-sys-color-on-warning-container: var(--md-sys-color-warning-10);
+    
+    /* Material Design 3 Surface Colors - Google Authentic */
+    --md-sys-color-surface: 254 254 254;
+    /* Google surface white */
+    --md-sys-color-on-surface: 32 33 36;
+    /* Google dark gray #202124 */
+    --md-sys-color-surface-variant: 248 249 250;
+    /* Google light gray #f8f9fa */
+    --md-sys-color-on-surface-variant: 95 99 104;
+    /* Google medium gray #5f6368 */
+    --md-sys-color-surface-container-lowest: 255 255 255;
+    /* Pure white for topmost surfaces */
+    --md-sys-color-surface-container-low: 252 253 254;
+    /* Very light surface */
+    --md-sys-color-surface-container: 248 249 250;
+    /* Google light surface #f8f9fa */
+    --md-sys-color-surface-container-high: 241 243 244;
+    /* Medium surface */
+    --md-sys-color-surface-container-highest: 232 234 237;
+    /* Highest elevation surface */
+    
+    /* Material Design 3 Background Colors - Google Authentic */
+    --md-sys-color-background: 248 249 250;
+    /* Google light background #f8f9fa */
+    --md-sys-color-on-background: 32 33 36;
+    /* Google dark gray #202124 */
+    
+    /* Material Design 3 Outline Colors */
+    --md-sys-color-outline: 189 193 198;
+    /* Light gray outline */
+    --md-sys-color-outline-variant: 218 220 224;
+    /* Very light gray outline */
+    
+    /* Legacy color mappings for compatibility */
+    --background: 255 255 255;
+    --foreground: 32 33 36;
+    --surface: 255 255 255;
+    --surface-dim: 248 249 250;
+    --surface-bright: 255 255 255;
+    --surface-container: 248 249 250;
+    --surface-container-high: 243 244 246;
 
     /* Google Brand Colors (Material Theme) */
-    --google-blue: 219 87% 54%;          /* Google Blue #1a73e8 */
-    --google-blue-dark: 219 87% 44%;     /* Darker blue for hover */
-    --google-green: 142 76% 36%;         /* Google Green #34a853 */
-    --google-yellow: 45 100% 51%;        /* Google Yellow #fbbc04 */
-    --google-red: 4 90% 58%;             /* Google Red #ea4335 */
+    --google-blue: 26 115 232;
+    /* Google Blue #1a73e8 */
+    --google-blue-dark: 23 78 166;
+    /* Darker blue for hover */
+    --google-green: 52 168 83;
+    /* Google Green #34a853 */
+    --google-yellow: 217 119 6;
+    /* Professional Amber #d97706 */
+    --google-red: 234 67 53;
+    /* Google Red #ea4335 */
 
     /* Primary brand colors (Google Blue) */
-    --primary: 219 87% 54%;              /* Google Blue */
-    --primary-foreground: 0 0% 100%;     /* White text on blue */
-    --primary-hover: 219 87% 44%;        /* Darker blue for hover */
-    --primary-muted: 219 87% 54% / 0.08; /* Very light blue background */
+    --primary: 26 115 232;
+    /* Google Blue */
+    --primary-foreground: 255 255 255;
+    /* White text on blue */
+    --primary-hover: 23 78 166;
+    /* Darker blue for hover */
+    --primary-muted: 26 115 232 / 0.08;
+    /* Very light blue background */
 
     /* Agent type colors */
     --agent-llm: 217 89% 61%;
@@ -40,63 +182,102 @@
     --agent-tool: 262 83% 58%;
 
     /* Material Design 3 Semantic Colors */
-    --secondary: 244 248 252;            /* Light gray background */
-    --secondary-foreground: 71 85 105;   /* Slate-600 for good contrast */
-    
-    --muted: 248 250 252;                /* Very light gray */
-    --muted-foreground: 100 116 139;     /* Slate-500 for muted text */
+    --secondary: 244 248 252;
+    /* Light gray background */
+    --secondary-foreground: 71 85 105;
+    /* Slate-600 for good contrast */
 
-    --accent: 219 87% 54% / 0.06;        /* Light blue accent background */
-    --accent-foreground: 219 87% 54%;    /* Blue accent text */
+    --muted: 248 250 252;
+    /* Very light gray */
+    --muted-foreground: 100 116 139;
+    /* Slate-500 for muted text */
 
-    --destructive: 4 90% 58%;            /* Google Red */
-    --destructive-foreground: 0 0% 100%; /* White text on red */
+    --accent: 219 87% 54% / 0.06;
+    /* Light blue accent background */
+    --accent-foreground: 219 87% 54%;
+    /* Blue accent text */
 
-    --warning: 45 100% 51%;              /* Google Yellow */
-    --warning-foreground: 45 100% 15%;   /* Dark yellow text */
+    --destructive: 4 90% 58%;
+    /* Google Red */
+    --destructive-foreground: 0 0% 100%;
+    /* White text on red */
 
-    --success: 142 76% 36%;              /* Google Green */
-    --success-foreground: 0 0% 100%;     /* White text on green */
+    --warning: 25 95% 53%;
+    /* Professional Amber */
+    --warning-foreground: 25 100% 15%;
+    /* Dark amber text */
+
+    --success: 142 76% 36%;
+    /* Google Green */
+    --success-foreground: 0 0% 100%;
+    /* White text on green */
 
     /* Material Design 3 Borders and inputs */
-    --border: 226 232 240;              /* Light border */
-    --border-strong: 203 213 225;       /* Stronger border */
-    --input: 241 245 249;               /* Light input background */
-    --ring: 219 87% 54%;                /* Blue focus ring */
+    --border: 226 232 240;
+    /* Light border */
+    --border-strong: 203 213 225;
+    /* Stronger border */
+    --input: 241 245 249;
+    /* Light input background */
+    --ring: 219 87% 54%;
+    /* Blue focus ring */
 
     /* Canvas specific (Material Design inspired) */
-    --canvas-background: 250 251 252;   /* Very light background */
-    --canvas-grid: 226 232 240;         /* Subtle grid lines */
-    --canvas-selection: 219 87% 54%;    /* Blue selection color */
+    --canvas-background: 250 251 252;
+    /* Very light background */
+    --canvas-grid: 226 232 240;
+    /* Subtle grid lines */
+    --canvas-selection: 219 87% 54%;
+    /* Blue selection color */
 
     /* Material Design 3 Sidebar */
-    --sidebar-background: 255 255 255;  /* Pure white sidebar */
-    --sidebar-foreground: 15 23 42;     /* Dark text */
-    --sidebar-border: 226 232 240;      /* Light border */
-    --sidebar-hover: 248 250 252;       /* Light hover background */
-    --sidebar-active: 219 87% 54% / 0.08; /* Light blue active state */
+    --sidebar-background: 255 255 255;
+    /* Pure white sidebar */
+    --sidebar-foreground: 15 23 42;
+    /* Dark text */
+    --sidebar-border: 226 232 240;
+    /* Light border */
+    --sidebar-hover: 248 250 252;
+    /* Light hover background */
+    --sidebar-active: 219 87% 54% / 0.08;
+    /* Light blue active state */
 
     /* Material Design 3 Properties panel */
-    --properties-background: 255 255 255; /* Pure white background */
-    --properties-border: 226 232 240;     /* Light border */
-    --properties-header: 248 250 252;     /* Light header background */
-    
+    --properties-background: 255 255 255;
+    /* Pure white background */
+    --properties-border: 226 232 240;
+    /* Light border */
+    --properties-header: 248 250 252;
+    /* Light header background */
+
     /* Card and popover colors */
-    --card: 255 255 255;                  /* Pure white cards */
-    --card-foreground: 15 23 42;          /* Dark text on cards */
-    --popover: 255 255 255;               /* Pure white popovers */
-    --popover-foreground: 15 23 42;       /* Dark text on popovers */
+    --card: 255 255 255;
+    /* Pure white cards */
+    --card-foreground: 15 23 42;
+    /* Dark text on cards */
+    --popover: 255 255 255;
+    /* Pure white popovers */
+    --popover-foreground: 15 23 42;
+    /* Dark text on popovers */
 
     /* Code editor */
     --code-background: 220 13% 18%;
     --code-foreground: 220 9% 97%;
 
+    /* Material Design 3 Elevation System - Google Authentic */
+    --md-sys-elevation-0: none;
+    --md-sys-elevation-1: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+    --md-sys-elevation-2: 0px 3px 6px 0px rgba(0, 0, 0, 0.16), 0px 1px 3px 0px rgba(0, 0, 0, 0.23);
+    --md-sys-elevation-3: 0px 6px 12px 0px rgba(0, 0, 0, 0.15), 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+    --md-sys-elevation-4: 0px 8px 16px 0px rgba(0, 0, 0, 0.14), 0px 2px 6px 0px rgba(0, 0, 0, 0.28);
+    --md-sys-elevation-5: 0px 12px 24px 0px rgba(0, 0, 0, 0.12), 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
+
     /* Enhanced Shadows (Material Design 3) */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.03);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+    --shadow-sm: var(--md-sys-elevation-1);
+    --shadow-md: var(--md-sys-elevation-2);
+    --shadow-lg: var(--md-sys-elevation-3);
+    --shadow-xl: var(--md-sys-elevation-4);
+    --shadow-2xl: var(--md-sys-elevation-5);
 
     /* Material Design 3 Gradients and Effects */
     --gradient-primary: linear-gradient(135deg, hsl(219 87% 54%), hsl(219 87% 44%));
@@ -112,65 +293,170 @@
   }
 
   .dark {
-    /* Dark theme for Google ADK Visual Builder */
-    --background: 15 23 42;              /* slate-800 */
-    --foreground: 248 250 252;           /* slate-50 */
-    --surface: 30 41 59;                 /* slate-700 */
-    --surface-dim: 15 23 42;             /* slate-800 */
-    --surface-bright: 51 65 85;          /* slate-600 */
-
-    /* Dark mode Google brand colors (slightly brighter) */
-    --google-blue: 219 87% 64%;          /* Brighter blue for dark mode */
-    --google-green: 142 76% 46%;         /* Brighter green */
-    --google-yellow: 45 100% 61%;        /* Brighter yellow */
-    --google-red: 4 90% 68%;             /* Brighter red */
-
-    --primary: 219 87% 64%;              /* Brighter blue for dark mode */
-    --primary-foreground: 15 23 42;      /* Dark background for contrast */
-    --primary-hover: 219 87% 54%;        /* Slightly darker on hover */
-
-    --secondary: 51 65 85;               /* slate-600 */
-    --secondary-foreground: 248 250 252; /* slate-50 */
+    /* Material Design 3 Core Color Tokens (Dark Theme) */
+    --md-sys-color-primary: var(--md-sys-color-primary-80);
+    --md-sys-color-on-primary: var(--md-sys-color-primary-20);
+    --md-sys-color-primary-container: var(--md-sys-color-primary-30);
+    --md-sys-color-on-primary-container: var(--md-sys-color-primary-90);
     
-    --muted: 51 65 85;                   /* slate-600 */
-    --muted-foreground: 148 163 184;     /* slate-400 */
+    --md-sys-color-secondary: var(--md-sys-color-secondary-80);
+    --md-sys-color-on-secondary: var(--md-sys-color-secondary-20);
+    --md-sys-color-secondary-container: var(--md-sys-color-secondary-30);
+    --md-sys-color-on-secondary-container: var(--md-sys-color-secondary-90);
+    
+    --md-sys-color-tertiary: var(--md-sys-color-tertiary-80);
+    --md-sys-color-on-tertiary: var(--md-sys-color-tertiary-20);
+    --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-30);
+    --md-sys-color-on-tertiary-container: var(--md-sys-color-tertiary-90);
+    
+    --md-sys-color-error: var(--md-sys-color-error-80);
+    --md-sys-color-on-error: var(--md-sys-color-error-20);
+    --md-sys-color-error-container: var(--md-sys-color-error-30);
+    --md-sys-color-on-error-container: var(--md-sys-color-error-90);
+    
+    --md-sys-color-warning: var(--md-sys-color-warning-80);
+    --md-sys-color-on-warning: var(--md-sys-color-warning-20);
+    --md-sys-color-warning-container: var(--md-sys-color-warning-30);
+    --md-sys-color-on-warning-container: var(--md-sys-color-warning-90);
+    
+    /* Material Design 3 Dark Surface Colors */
+    --md-sys-color-surface: 16 20 24;
+    /* Dark surface */
+    --md-sys-color-on-surface: 227 226 230;
+    /* Light on surface */
+    --md-sys-color-surface-variant: 67 71 78;
+    /* Dark surface variant */
+    --md-sys-color-on-surface-variant: 195 198 208;
+    /* Light on surface variant */
+    --md-sys-color-surface-container-lowest: 11 12 16;
+    /* Darkest surface */
+    --md-sys-color-surface-container-low: 16 20 24;
+    /* Dark surface */
+    --md-sys-color-surface-container: 20 25 30;
+    /* Medium dark surface */
+    --md-sys-color-surface-container-high: 26 31 37;
+    /* Lighter dark surface */
+    --md-sys-color-surface-container-highest: 32 37 44;
+    /* Lightest dark surface */
+    
+    /* Material Design 3 Dark Background Colors */
+    --md-sys-color-background: 16 20 24;
+    /* Dark background */
+    --md-sys-color-on-background: 227 226 230;
+    /* Light on background */
+    
+    /* Material Design 3 Dark Outline Colors */
+    --md-sys-color-outline: 145 148 158;
+    /* Medium gray outline */
+    --md-sys-color-outline-variant: 67 71 78;
+    /* Dark gray outline */
 
-    --accent: 219 87% 64% / 0.1;         /* Light blue with transparency */
-    --accent-foreground: 219 87% 64%;    /* Bright blue text */
+    /* Legacy color mappings for compatibility */
+    --background: 16 20 24;
+    --foreground: 227 226 230;
+    --surface: 20 25 30;
+    --surface-dim: 16 20 24;
+    --surface-bright: 32 37 44;
+    --surface-container: 20 25 30;
+    --surface-container-high: 26 31 37;
 
-    --destructive: 4 90% 68%;            /* Brighter red */
-    --destructive-foreground: 15 23 42;  /* Dark background */
+    /* Dark mode Google brand colors */
+    --google-blue: 138 180 248;
+    /* Light blue for dark theme */
+    --google-blue-dark: 26 115 232;
+    /* Standard blue for hover */
+    --google-green: 129 201 149;
+    /* Light green for dark theme */
+    --google-yellow: 252 211 77;
+    /* Light amber for dark theme */
+    --google-red: 242 184 181;
+    /* Light red for dark theme */
 
-    --border: 71 85 105;                 /* slate-500 */
-    --border-strong: 100 116 139;        /* slate-400 */
-    --input: 71 85 105;                  /* slate-500 */
-    --ring: 219 87% 64%;                 /* Bright blue focus ring */
+    --primary: 138 180 248;
+    /* Light blue for dark theme */
+    --primary-foreground: 1 28 54;
+    /* Dark blue for contrast */
+    --primary-hover: 26 115 232;
+    /* Standard blue on hover */
+
+    --secondary: 51 65 85;
+    /* slate-600 */
+    --secondary-foreground: 248 250 252;
+    /* slate-50 */
+
+    --muted: 51 65 85;
+    /* slate-600 */
+    --muted-foreground: 148 163 184;
+    /* slate-400 */
+
+    --accent: 219 87% 64% / 0.1;
+    /* Light blue with transparency */
+    --accent-foreground: 219 87% 64%;
+    /* Bright blue text */
+
+    --destructive: 4 90% 68%;
+    /* Brighter red */
+    --destructive-foreground: 15 23 42;
+    /* Dark background */
+
+    --border: 71 85 105;
+    /* slate-500 */
+    --border-strong: 100 116 139;
+    /* slate-400 */
+    --input: 71 85 105;
+    /* slate-500 */
+    --ring: 219 87% 64%;
+    /* Bright blue focus ring */
 
     /* Dark canvas */
-    --canvas-background: 15 23 42;       /* slate-800 */
-    --canvas-grid: 71 85 105;            /* slate-500 */
+    --canvas-background: 15 23 42;
+    /* slate-800 */
+    --canvas-grid: 71 85 105;
+    /* slate-500 */
 
     /* Dark sidebar */
-    --sidebar-background: 30 41 59;      /* slate-700 */
-    --sidebar-foreground: 248 250 252;   /* slate-50 */
-    --sidebar-border: 71 85 105;         /* slate-500 */
-    --sidebar-hover: 51 65 85;           /* slate-600 */
-    --sidebar-active: 219 87% 64% / 0.15; /* Light blue active state */
+    --sidebar-background: 30 41 59;
+    /* slate-700 */
+    --sidebar-foreground: 248 250 252;
+    /* slate-50 */
+    --sidebar-border: 71 85 105;
+    /* slate-500 */
+    --sidebar-hover: 51 65 85;
+    /* slate-600 */
+    --sidebar-active: 219 87% 64% / 0.15;
+    /* Light blue active state */
 
     /* Dark properties panel */
-    --properties-background: 30 41 59;   /* slate-700 */
-    --properties-border: 71 85 105;      /* slate-500 */
-    --properties-header: 51 65 85;       /* slate-600 */
+    --properties-background: 30 41 59;
+    /* slate-700 */
+    --properties-border: 71 85 105;
+    /* slate-500 */
+    --properties-header: 51 65 85;
+    /* slate-600 */
 
     /* Dark cards and popovers */
-    --card: 30 41 59;                    /* slate-700 */
-    --card-foreground: 248 250 252;      /* slate-50 */
-    --popover: 30 41 59;                 /* slate-700 */
-    --popover-foreground: 248 250 252;   /* slate-50 */
+    --card: 30 41 59;
+    /* slate-700 */
+    --card-foreground: 248 250 252;
+    /* slate-50 */
+    --popover: 30 41 59;
+    /* slate-700 */
+    --popover-foreground: 248 250 252;
+    /* slate-50 */
 
     /* Dark code editor */
-    --code-background: 15 23 42;         /* slate-800 */
-    --code-foreground: 248 250 252;      /* slate-50 */
+    --code-background: 15 23 42;
+    /* slate-800 */
+    --code-foreground: 248 250 252;
+    /* slate-50 */
+
+    /* Material Design 3 Dark Theme Elevation System */
+    --md-sys-elevation-0: none;
+    --md-sys-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    --md-sys-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    --md-sys-elevation-4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    --md-sys-elevation-5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -184,27 +470,182 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply md-bg-background md-text-on-background;
+    font-family: 'Roboto', 'Inter', sans-serif;
     height: 100%;
     margin: 0;
     padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    background-color: rgb(var(--md-sys-color-background)) !important;
   }
 
   #root {
     height: 100%;
+    background-color: rgb(var(--md-sys-color-background)) !important;
+  }
+
+  /* Ensure all text is visible and properly styled */
+  * {
+    color: inherit !important;
+    font-family: inherit !important;
+  }
+
+  /* Force text visibility */
+  p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, textarea, label {
+    color: currentColor !important;
+    opacity: 1 !important;
+  }
+
+  /* Material Design 3 Typography Scale */
+  .md-typescale-display-large {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 57px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: -0.25px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-display-medium {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 52px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-display-small {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-headline-large {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-headline-medium {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-headline-small {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-title-large {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-title-medium {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-title-small {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-body-large {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-body-medium {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-body-small {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-label-large {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-label-medium {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
+  }
+
+  .md-typescale-label-small {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    color: rgb(var(--md-sys-color-on-surface)) !important;
   }
 }
 
 @layer components {
   /* Enhanced Material Design 3 Components */
-  
+
   /* Agent Node Animations with Material Design principles */
   .agent-node {
     @apply transition-all duration-300 ease-in-out;
     box-shadow: var(--shadow-md);
     border-radius: 12px;
   }
-  
+
   .agent-node:hover {
     @apply scale-105;
     box-shadow: var(--shadow-lg);
@@ -220,12 +661,111 @@
     box-shadow: 0 0 20px hsl(4 90% 58% / 0.5);
   }
 
-  /* Enhanced Canvas Grid Pattern */
+  /* Enhanced Canvas Grid Pattern - Google Material Design */
   .canvas-grid {
-    background-image: 
-      linear-gradient(hsl(226 232 240) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(226 232 240) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-color: rgb(var(--md-sys-color-surface)) !important;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  /* Override ReactFlow default styles with Material Design */
+  .react-flow__pane {
+    background-color: rgb(var(--md-sys-color-surface)) !important;
+    cursor: default;
+  }
+
+  .react-flow__renderer {
+    background-color: rgb(var(--md-sys-color-surface)) !important;
+  }
+
+  .react-flow {
+    background-color: rgb(var(--md-sys-color-surface)) !important;
+    font-family: 'Roboto', sans-serif !important;
+  }
+
+  /* ReactFlow Controls Styling */
+  .react-flow__controls {
+    button {
+      @apply md-surface-container-highest md-text-on-surface border-md-sys-color-outline-variant/30;
+      font-family: 'Roboto', sans-serif !important;
+      
+      &:hover {
+        @apply md-surface-container hover:md-elevation-1;
+      }
+    }
+  }
+
+  /* ReactFlow MiniMap Styling */
+  .react-flow__minimap {
+    @apply md-surface-container-highest;
+  }
+
+  /* ReactFlow Edge Styling */
+  .react-flow__edge {
+    stroke: rgb(var(--md-sys-color-primary)) !important;
+    stroke-width: 2px;
+    
+    &.animated {
+      stroke-dasharray: 5;
+      animation: dashdraw 1s linear infinite;
+    }
+    
+    &.selected {
+      stroke: rgb(var(--md-sys-color-tertiary)) !important;
+      stroke-width: 3px;
+    }
+  }
+
+  /* ReactFlow Handle Styling */
+  .react-flow__handle {
+    background: rgb(var(--md-sys-color-primary)) !important;
+    border: 2px solid rgb(var(--md-sys-color-surface)) !important;
+    width: 10px !important;
+    height: 10px !important;
+    
+    &.react-flow__handle-right {
+      right: -5px !important;
+    }
+    
+    &.react-flow__handle-left {
+      left: -5px !important;
+    }
+    
+    &.react-flow__handle-top {
+      top: -5px !important;
+    }
+    
+    &.react-flow__handle-bottom {
+      bottom: -5px !important;
+    }
+  }
+
+  /* Material Design 3 Base Background */
+  html, body, #root {
+    background-color: rgb(var(--md-sys-color-surface-container-lowest)) !important;
+  }
+
+  /* Main application container */
+  .adk-app-container {
+    background-color: rgb(var(--md-sys-color-surface-container-lowest));
+  }
+
+  /* Allow Material Design surface colors to cascade naturally */
+  .md-surface-primary { background-color: rgb(var(--md-sys-color-primary)) !important; }
+  .md-surface-secondary { background-color: rgb(var(--md-sys-color-secondary)) !important; }
+  .md-surface-tertiary { background-color: rgb(var(--md-sys-color-tertiary)) !important; }
+  .md-surface-error { background-color: rgb(var(--md-sys-color-error)) !important; }
+  .md-surface-warning { background-color: rgb(var(--md-sys-color-warning)) !important; }
+  
+  /* Material Design surface containers */
+  .md-surface-container-lowest { background-color: rgb(var(--md-sys-color-surface-container-lowest)) !important; }
+  .md-surface-container-low { background-color: rgb(var(--md-sys-color-surface-container-low)) !important; }
+  .md-surface-container { background-color: rgb(var(--md-sys-color-surface-container)) !important; }
+  .md-surface-container-high { background-color: rgb(var(--md-sys-color-surface-container-high)) !important; }
+  .md-surface-container-highest { background-color: rgb(var(--md-sys-color-surface-container-highest)) !important; }
+
+  /* Component-specific surface overrides */
+  [class*="bg-md-sys-color"], [class*="md-bg-"], [class*="google-"], .bg-card, .bg-popover, .bg-surface {
+    background-color: revert !important;
   }
 
   /* Material Design 3 Component Hover States */
@@ -233,10 +773,38 @@
     @apply transition-all duration-200 ease-in-out;
     border-radius: 12px;
   }
-  
+
   .component-item:hover {
     @apply bg-sidebar-hover scale-102;
     box-shadow: var(--shadow-md);
+  }
+
+  /* Drag and Drop Visual Feedback */
+  .component-item:active {
+    @apply scale-110 md-elevation-4;
+    transform: rotate(2deg);
+    opacity: 0.8;
+    z-index: 1000;
+  }
+
+  /* Canvas Drop Zone Styling */
+  .react-flow__pane.react-flow__pane--dragging-over {
+    background-color: rgb(var(--md-sys-color-primary-container)) !important;
+    opacity: 0.3;
+  }
+
+  /* Canvas Drop Indicator */
+  .canvas-grid[data-dropping="true"] {
+    background-color: rgb(var(--md-sys-color-primary-90)) !important;
+    box-shadow: inset 0 0 0 2px rgb(var(--md-sys-color-primary));
+  }
+
+  .canvas-grid.drag-over {
+    background-color: rgb(var(--md-sys-color-primary-90)) !important;
+  }
+
+  .canvas-grid.drag-over .react-flow__pane {
+    background-color: rgb(var(--md-sys-color-primary-90)) !important;
   }
 
   /* Enhanced Connection Animation */
@@ -291,10 +859,50 @@
 }
 
 @layer utilities {
+
   /* Custom Animations */
   @keyframes dashdraw {
-    from { stroke-dashoffset: 10; }
-    to { stroke-dashoffset: 0; }
+    from {
+      stroke-dashoffset: 10;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Material Design 3 Ripple Effect */
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Material Design 3 Enhanced Ripple for Interactive Elements */
+  .ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .ripple:active::before {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
   }
 
   @keyframes fadeInUp {
@@ -302,6 +910,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -313,6 +922,7 @@
       opacity: 0;
       transform: translateX(100%);
     }
+
     to {
       opacity: 1;
       transform: translateX(0);
@@ -320,54 +930,334 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 0 5px hsl(var(--primary) / 0.3);
     }
+
     50% {
       box-shadow: 0 0 20px hsl(var(--primary) / 0.6), 0 0 30px hsl(var(--primary) / 0.4);
     }
   }
 
-  /* Enhanced Material Design 3 Utility Classes */
-  .font-inter { 
-    font-family: 'Inter', sans-serif; 
+  /* Material Design 3 Utility Classes */
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
-  .font-mono { 
-    font-family: 'JetBrains Mono', monospace; 
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
     font-feature-settings: 'liga' 0;
   }
+
+  /* Material Design 3 Elevation Utilities */
+  .md-elevation-0 { 
+    box-shadow: var(--md-sys-elevation-0);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .md-elevation-1 { 
+    box-shadow: var(--md-sys-elevation-1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .md-elevation-2 { 
+    box-shadow: var(--md-sys-elevation-2);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .md-elevation-3 { 
+    box-shadow: var(--md-sys-elevation-3);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .md-elevation-4 { 
+    box-shadow: var(--md-sys-elevation-4);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .md-elevation-5 { 
+    box-shadow: var(--md-sys-elevation-5);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Material Design 3 Elevation Hover States */
+  .md-elevation-0:hover { box-shadow: var(--md-sys-elevation-1); }
+  .md-elevation-1:hover { box-shadow: var(--md-sys-elevation-2); }
+  .md-elevation-2:hover { box-shadow: var(--md-sys-elevation-3); }
+  .md-elevation-3:hover { box-shadow: var(--md-sys-elevation-4); }
+  .md-elevation-4:hover { box-shadow: var(--md-sys-elevation-5); }
+  .md-elevation-5:hover { box-shadow: var(--md-sys-elevation-5); }
+
+  /* Material Design 3 Elevation Focus States */
+  .md-elevation-0:focus-visible { box-shadow: var(--md-sys-elevation-1); }
+  .md-elevation-1:focus-visible { box-shadow: var(--md-sys-elevation-2); }
+  .md-elevation-2:focus-visible { box-shadow: var(--md-sys-elevation-3); }
+  .md-elevation-3:focus-visible { box-shadow: var(--md-sys-elevation-4); }
+  .md-elevation-4:focus-visible { box-shadow: var(--md-sys-elevation-5); }
+  .md-elevation-5:focus-visible { box-shadow: var(--md-sys-elevation-5); }
+
+  /* Material Design 3 Semantic Color Utilities */
   
-  .scale-102 { transform: scale(1.02); }
-  .animate-fade-in-up { animation: fadeInUp 0.3s ease-out; }
-  .animate-slide-in-right { animation: slideInRight 0.3s ease-out; }
-  .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+  /* Primary Color Utilities */
+  .md-bg-primary { background-color: rgb(var(--md-sys-color-primary)); }
+  .md-text-primary { color: rgb(var(--md-sys-color-primary)); }
+  .md-bg-on-primary { background-color: rgb(var(--md-sys-color-on-primary)); }
+  .md-text-on-primary { color: rgb(var(--md-sys-color-on-primary)); }
+  .md-bg-primary-container { background-color: rgb(var(--md-sys-color-primary-container)); }
+  .md-text-primary-container { color: rgb(var(--md-sys-color-primary-container)); }
+  .md-bg-on-primary-container { background-color: rgb(var(--md-sys-color-on-primary-container)); }
+  .md-text-on-primary-container { color: rgb(var(--md-sys-color-on-primary-container)); }
+
+  /* Secondary Color Utilities */
+  .md-bg-secondary { background-color: rgb(var(--md-sys-color-secondary)); }
+  .md-text-secondary { color: rgb(var(--md-sys-color-secondary)); }
+  .md-bg-on-secondary { background-color: rgb(var(--md-sys-color-on-secondary)); }
+  .md-text-on-secondary { color: rgb(var(--md-sys-color-on-secondary)); }
+  .md-bg-secondary-container { background-color: rgb(var(--md-sys-color-secondary-container)); }
+  .md-text-secondary-container { color: rgb(var(--md-sys-color-secondary-container)); }
+  .md-bg-on-secondary-container { background-color: rgb(var(--md-sys-color-on-secondary-container)); }
+  .md-text-on-secondary-container { color: rgb(var(--md-sys-color-on-secondary-container)); }
+
+  /* Tertiary Color Utilities */
+  .md-bg-tertiary { background-color: rgb(var(--md-sys-color-tertiary)); }
+  .md-text-tertiary { color: rgb(var(--md-sys-color-tertiary)); }
+  .md-bg-on-tertiary { background-color: rgb(var(--md-sys-color-on-tertiary)); }
+  .md-text-on-tertiary { color: rgb(var(--md-sys-color-on-tertiary)); }
+  .md-bg-tertiary-container { background-color: rgb(var(--md-sys-color-tertiary-container)); }
+  .md-text-tertiary-container { color: rgb(var(--md-sys-color-tertiary-container)); }
+  .md-bg-on-tertiary-container { background-color: rgb(var(--md-sys-color-on-tertiary-container)); }
+  .md-text-on-tertiary-container { color: rgb(var(--md-sys-color-on-tertiary-container)); }
+
+  /* Error Color Utilities */
+  .md-bg-error { background-color: rgb(var(--md-sys-color-error)); }
+  .md-text-error { color: rgb(var(--md-sys-color-error)); }
+  .md-bg-on-error { background-color: rgb(var(--md-sys-color-on-error)); }
+  .md-text-on-error { color: rgb(var(--md-sys-color-on-error)); }
+  .md-bg-error-container { background-color: rgb(var(--md-sys-color-error-container)); }
+  .md-text-error-container { color: rgb(var(--md-sys-color-error-container)); }
+  .md-bg-on-error-container { background-color: rgb(var(--md-sys-color-on-error-container)); }
+  .md-text-on-error-container { color: rgb(var(--md-sys-color-on-error-container)); }
+
+  /* Warning Color Utilities */
+  .md-bg-warning { background-color: rgb(var(--md-sys-color-warning)); }
+  .md-text-warning { color: rgb(var(--md-sys-color-warning)); }
+  .md-bg-on-warning { background-color: rgb(var(--md-sys-color-on-warning)); }
+  .md-text-on-warning { color: rgb(var(--md-sys-color-on-warning)); }
+  .md-bg-warning-container { background-color: rgb(var(--md-sys-color-warning-container)); }
+  .md-text-warning-container { color: rgb(var(--md-sys-color-warning-container)); }
+  .md-bg-on-warning-container { background-color: rgb(var(--md-sys-color-on-warning-container)); }
+  .md-text-on-warning-container { color: rgb(var(--md-sys-color-on-warning-container)); }
+
+  /* Surface Color Utilities */
+  .md-bg-surface { background-color: rgb(var(--md-sys-color-surface)); }
+  .md-text-surface { color: rgb(var(--md-sys-color-surface)); }
+  .md-bg-on-surface { background-color: rgb(var(--md-sys-color-on-surface)); }
+  .md-text-on-surface { color: rgb(var(--md-sys-color-on-surface)); }
+  .md-bg-surface-variant { background-color: rgb(var(--md-sys-color-surface-variant)); }
+  .md-text-surface-variant { color: rgb(var(--md-sys-color-surface-variant)); }
+  .md-bg-on-surface-variant { background-color: rgb(var(--md-sys-color-on-surface-variant)); }
+  .md-text-on-surface-variant { color: rgb(var(--md-sys-color-on-surface-variant)); }
+
+  /* Surface Container Utilities */
+  .md-bg-surface-container-lowest { background-color: rgb(var(--md-sys-color-surface-container-lowest)); }
+  .md-bg-surface-container-low { background-color: rgb(var(--md-sys-color-surface-container-low)); }
+  .md-bg-surface-container { background-color: rgb(var(--md-sys-color-surface-container)); }
+  .md-bg-surface-container-high { background-color: rgb(var(--md-sys-color-surface-container-high)); }
+  .md-bg-surface-container-highest { background-color: rgb(var(--md-sys-color-surface-container-highest)); }
+
+  /* Background Color Utilities */
+  .md-bg-background { background-color: rgb(var(--md-sys-color-background)); }
+  .md-text-background { color: rgb(var(--md-sys-color-background)); }
+  .md-bg-on-background { background-color: rgb(var(--md-sys-color-on-background)); }
+  .md-text-on-background { color: rgb(var(--md-sys-color-on-background)); }
+
+  /* Material Design 3 Interactive Elevation Classes */
+  .md-interactive-elevation {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .md-card {
+    @apply md-elevation-1 md-interactive-elevation rounded-md;
+  }
+
+  .md-card:hover {
+    @apply md-elevation-2;
+  }
+
+  .md-button-filled {
+    @apply md-elevation-1 md-interactive-elevation;
+  }
+
+  .md-button-filled:hover {
+    @apply md-elevation-2;
+  }
+
+  .md-button-filled:active {
+    @apply md-elevation-1;
+  }
+
+  .md-fab {
+    @apply md-elevation-3 md-interactive-elevation;
+  }
+
+  .md-fab:hover {
+    @apply md-elevation-4;
+  }
+
+  .md-fab:active {
+    @apply md-elevation-3;
+  }
+
+  .md-dialog {
+    @apply md-elevation-5;
+  }
+
+  .md-menu {
+    @apply md-elevation-3;
+  }
+
+  .md-tooltip {
+    @apply md-elevation-2;
+  }
+
+  .md-sheet {
+    @apply md-elevation-4;
+  }
+  
+  /* Material Design 3 Component-specific classes */
+  .md-text-field {
+    @apply bg-md-sys-color-surface-container-highest text-md-sys-color-on-surface rounded-md border border-md-sys-color-outline focus:border-md-sys-color-primary focus:ring-2 focus:ring-md-sys-color-primary/20 transition-all duration-md-short2;
+  }
+  
+  .md-chip {
+    @apply bg-md-sys-color-surface-container-low text-md-sys-color-on-surface-variant rounded-full px-3 py-1 text-sm font-roboto border border-md-sys-color-outline-variant hover:bg-md-sys-color-on-surface/8 transition-colors duration-md-short2;
+  }
+  
+  .md-navigation-item {
+    @apply text-md-sys-color-on-surface-variant hover:text-md-sys-color-on-surface hover:bg-md-sys-color-on-surface/8 active:bg-md-sys-color-on-surface/12 rounded-lg px-3 py-2 transition-all duration-md-short2 font-roboto;
+  }
+  
+  .md-divider {
+    @apply border-md-sys-color-outline-variant;
+  }
+  
+  .md-bg-background { background-color: rgb(var(--md-sys-color-background)); }
+  .md-text-background { color: rgb(var(--md-sys-color-background)); }
+  .md-bg-on-background { background-color: rgb(var(--md-sys-color-on-background)); }
+  .md-text-on-background { color: rgb(var(--md-sys-color-on-background)); }
+
+  /* Outline Color Utilities */
+  .md-border-outline { border-color: rgb(var(--md-sys-color-outline)); }
+  .md-border-outline-variant { border-color: rgb(var(--md-sys-color-outline-variant)); }
+
+  /* Material Design 3 Surface Tint Utilities */
+  .md-surface-tint-primary {
+    background-color: rgb(var(--md-sys-color-primary) / 0.05);
+  }
+
+  .md-surface-tint-secondary {
+    background-color: rgb(var(--md-sys-color-secondary) / 0.08);
+  }
+
+  .md-surface-tint-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary) / 0.05);
+  }
+
+  .md-surface-tint-error {
+    background-color: rgb(var(--md-sys-color-error) / 0.05);
+  }
+
+  .md-surface-tint-warning {
+    background-color: rgb(var(--md-sys-color-warning) / 0.05);
+  }
+
+  /* Material Design 3 State Layer Utilities */
+  .md-state-hover-primary {
+    background-color: rgb(var(--md-sys-color-primary) / 0.08);
+  }
+
+  .md-state-focus-primary {
+    background-color: rgb(var(--md-sys-color-primary) / 0.12);
+  }
+
+  .md-state-pressed-primary {
+    background-color: rgb(var(--md-sys-color-primary) / 0.12);
+  }
+
+  .md-state-hover-secondary {
+    background-color: rgb(var(--md-sys-color-secondary) / 0.08);
+  }
+
+  .md-state-focus-secondary {
+    background-color: rgb(var(--md-sys-color-secondary) / 0.12);
+  }
+
+  .md-state-pressed-secondary {
+    background-color: rgb(var(--md-sys-color-secondary) / 0.12);
+  }
+
+  .md-state-hover-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary) / 0.08);
+  }
+
+  .md-state-focus-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary) / 0.12);
+  }
+
+  .md-state-pressed-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary) / 0.12);
+  }
+
+  .scale-102 {
+    transform: scale(1.02);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.3s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
 
   /* Material Design 3 Focus States */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
-    focus-visible:ring-color: hsl(219 87% 54%);
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500;
   }
 
   /* Agent type colors with enhanced contrast */
-  .agent-llm { 
-    border-color: hsl(219 87% 54%); 
+  .agent-llm {
+    border-color: hsl(219 87% 54%);
     background: hsl(219 87% 54% / 0.05);
   }
-  .agent-sequential { 
-    border-color: hsl(142 76% 36%); 
+
+  .agent-sequential {
+    border-color: hsl(142 76% 36%);
     background: hsl(142 76% 36% / 0.05);
   }
-  .agent-parallel { 
-    border-color: hsl(45 100% 51%); 
+
+  .agent-parallel {
+    border-color: hsl(45 100% 51%);
     background: hsl(45 100% 51% / 0.05);
   }
-  .agent-loop { 
-    border-color: hsl(4 90% 58%); 
+
+  .agent-loop {
+    border-color: hsl(4 90% 58%);
     background: hsl(4 90% 58% / 0.05);
   }
-  .agent-tool { 
-    border-color: hsl(262 83% 58%); 
+
+  .agent-tool {
+    border-color: hsl(262 83% 58%);
     background: hsl(262 83% 58% / 0.05);
   }
 }

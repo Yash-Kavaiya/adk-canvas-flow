@@ -33,26 +33,26 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="h-16 bg-surface border-b border-border flex items-center px-6 gap-4 shadow-sm">
+    <header className="h-16 md-surface-container-highest md-text-on-surface border-b border-md-sys-color-outline-variant/20 flex items-center px-6 gap-4 md-elevation-1">
       {/* Left section */}
       <div className="flex items-center gap-4">
-        <GoogleButton
-          variant="google-ghost"
-          size="sm"
+        <Button
+          variant="text"
+          size="icon"
           onClick={toggleSidebar}
-          className="rounded-lg"
+          className="rounded-full w-10 h-10"
         >
-          <Menu className="h-4 w-4" />
-        </GoogleButton>
+          <Menu className="h-5 w-5" />
+        </Button>
         
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-xl flex items-center justify-center shadow-sm">
-            <span className="text-white text-lg font-bold">G</span>
+          <div className="w-10 h-10 md-surface-primary rounded-xl flex items-center justify-center md-elevation-1">
+            <span className="md-text-on-primary text-lg font-roboto font-bold">G</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-semibold text-foreground">Google ADK Builder</span>
+            <span className="md-typescale-title-medium font-roboto md-text-on-surface">Google ADK Builder</span>
             {currentProject && (
-              <span className="text-sm text-muted-foreground">{currentProject.name}</span>
+              <span className="md-typescale-body-small font-roboto md-text-on-surface-variant">{currentProject.name}</span>
             )}
           </div>
         </div>
@@ -60,59 +60,59 @@ export const Header: React.FC = () => {
 
       {/* Center section - Quick actions */}
       <div className="flex-1 flex items-center justify-center gap-3">
-        <GoogleButton
-          variant="google-outline"
-          size="default"
+        <Button
+          variant="outlined"
+          size="medium"
           onClick={handleSave}
-          className="font-medium gap-2"
+          className="gap-2"
         >
           <Save className="h-4 w-4" />
           Save Project
-        </GoogleButton>
+        </Button>
         
-        <GoogleButton
-          variant={testModeActive ? "google-green" : "google-outline"}
-          size="default"
+        <Button
+          variant={testModeActive ? "filled" : "outlined"}
+          size="medium"
           onClick={toggleTestMode}
-          className="font-medium gap-2"
+          className={`gap-2 ${testModeActive ? 'md-surface-tertiary md-text-on-tertiary' : ''}`}
         >
           <Play className="h-4 w-4" />
           {testModeActive ? "Testing..." : "Test"}
-        </GoogleButton>
+        </Button>
         
-        <GoogleButton
-          variant={codeViewVisible ? "google-blue" : "google-outline"}
-          size="default"
+        <Button
+          variant={codeViewVisible ? "filled" : "outlined"}
+          size="medium"
           onClick={toggleCodeView}
-          className="font-medium gap-2"
+          className="gap-2"
         >
           <Code className="h-4 w-4" />
           {codeViewVisible ? "Hide Code" : "View Code"}
-        </GoogleButton>
+        </Button>
       </div>
 
       {/* Right section */}
-      <div className="flex items-center gap-2">
-        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
+      <div className="flex items-center gap-1">
+        <Button variant="text" size="icon" className="rounded-full w-10 h-10">
           <Download className="h-4 w-4" />
-        </GoogleButton>
+        </Button>
         
-        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
+        <Button variant="text" size="icon" className="rounded-full w-10 h-10">
           <Upload className="h-4 w-4" />
-        </GoogleButton>
+        </Button>
         
-        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
+        <Button variant="text" size="icon" className="rounded-full w-10 h-10">
           <Settings className="h-4 w-4" />
-        </GoogleButton>
+        </Button>
         
-        <Separator orientation="vertical" className="h-6 mx-2" />
+        <Separator orientation="vertical" className="h-6 mx-2 bg-md-sys-color-outline-variant/40" />
         
-        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
+        <Button variant="text" size="icon" className="rounded-full w-10 h-10">
           <HelpCircle className="h-4 w-4" />
-        </GoogleButton>
+        </Button>
         
-        <div className="w-9 h-9 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-full flex items-center justify-center cursor-pointer hover:shadow-md transition-all duration-200 hover:scale-105">
-          <User className="h-4 w-4 text-white" />
+        <div className="w-9 h-9 md-surface-primary rounded-full flex items-center justify-center cursor-pointer hover:md-elevation-2 transition-all duration-md-short3 hover:scale-105 ml-2 md-elevation-1">
+          <User className="h-4 w-4 md-text-on-primary" />
         </div>
       </div>
     </header>

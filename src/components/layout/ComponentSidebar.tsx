@@ -26,7 +26,7 @@ const ComponentItem: React.FC<ComponentItemProps> = ({ item, collapsed }) => {
       <div
         draggable
         onDragStart={handleDragStart}
-        className="component-item w-12 h-12 bg-surface border-2 border-border rounded-xl flex items-center justify-center cursor-grab hover:shadow-lg hover:scale-105 transition-all duration-200 hover:border-google-blue"
+        className="component-item w-12 h-12 md-surface-container-high md-text-on-surface border-2 border-md-sys-color-outline-variant rounded-xl flex items-center justify-center cursor-grab hover:md-elevation-2 hover:scale-105 transition-all duration-md-short3 ease-md-standard hover:border-md-sys-color-primary hover:bg-md-primary-90/40"
         title={item.name}
       >
         <span className="text-lg">{item.icon}</span>
@@ -38,15 +38,16 @@ const ComponentItem: React.FC<ComponentItemProps> = ({ item, collapsed }) => {
     <Card
       draggable
       onDragStart={handleDragStart}
-      className="component-item p-4 cursor-grab hover:shadow-lg hover:scale-[1.02] transition-all duration-200 border border-border/50 hover:border-google-blue/50 rounded-lg bg-gradient-to-r from-surface to-surface-bright"
+      variant="elevated"
+      className="component-item p-4 cursor-grab hover:md-elevation-3 hover:scale-[1.02] transition-all duration-md-short3 ease-md-standard hover:bg-md-primary-90/30 rounded-xl"
     >
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-google-blue/10 to-google-blue/5 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg bg-md-primary-90/60 md-text-primary flex items-center justify-center">
           <span className="text-lg">{item.icon}</span>
         </div>
         <div className="flex-1 min-w-0">
-          <h4 className="font-medium text-sm text-foreground truncate">{item.name}</h4>
-          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{item.description}</p>
+          <h4 className="md-typescale-label-large font-roboto md-text-on-surface truncate">{item.name}</h4>
+          <p className="md-typescale-body-small font-roboto md-text-on-surface-variant mt-1 line-clamp-2">{item.description}</p>
         </div>
       </div>
     </Card>
@@ -73,10 +74,10 @@ const ComponentGroup: React.FC<ComponentGroupProps> = ({ title, items, collapsed
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <h3 className="font-semibold text-sm text-foreground uppercase tracking-wide">
+        <h3 className="font-semibold text-sm md-text-on-surface-variant uppercase tracking-wide font-roboto">
           {title}
         </h3>
-        <Badge variant="secondary" className="text-xs bg-google-blue/10 text-google-blue border-google-blue/20">
+        <Badge variant="secondary" className="text-xs bg-md-primary-90/60 md-text-primary border-md-primary-80/40 rounded-full">
           {items.length}
         </Badge>
       </div>
@@ -98,19 +99,19 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
 
   return (
     <div 
-      className={`bg-sidebar border-r border-sidebar-border transition-all duration-300 shadow-sm ${
+      className={`md-surface-container-low border-r border-md-sys-color-outline-variant/30 transition-all duration-300 md-elevation-1 ${
         collapsed ? 'w-16' : 'w-72'
       }`}
     >
       <div className="h-full flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-sidebar-border bg-properties-header">
+        <div className="p-4 border-b border-md-sys-color-outline-variant/30 md-surface-container">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">C</span>
+              <div className="w-8 h-8 md-surface-primary rounded-lg flex items-center justify-center md-elevation-1">
+                <span className="md-text-on-primary font-bold text-sm font-roboto">C</span>
               </div>
-              <h2 className="font-semibold text-sidebar-foreground">Component Library</h2>
+              <h2 className="font-semibold md-text-on-surface md-typescale-title-medium font-roboto">Component Library</h2>
             </div>
           )}
         </div>
@@ -124,7 +125,7 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
               collapsed={collapsed}
             />
             
-            {!collapsed && <Separator className="bg-border/50" />}
+            {!collapsed && <Separator className="bg-md-sys-color-outline-variant/30" />}
             
             <ComponentGroup 
               title="Workflow" 
@@ -132,7 +133,7 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
               collapsed={collapsed}
             />
             
-            {!collapsed && <Separator className="bg-border/50" />}
+            {!collapsed && <Separator className="bg-md-sys-color-outline-variant/30" />}
             
             <ComponentGroup 
               title="Tools" 

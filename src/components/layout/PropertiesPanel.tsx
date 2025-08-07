@@ -39,33 +39,33 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
   return (
     <div className="relative">
       {/* Collapse/Expand Toggle - Always visible */}
-      <GoogleButton
-        variant="google-floating"
+      <Button
+        variant="filled"
         size="icon"
         onClick={togglePropertiesPanel}
-        className="absolute -left-12 top-4 z-10 shadow-lg"
+        className="absolute -left-12 top-4 z-10 md-elevation-3 rounded-full w-10 h-10"
       >
         {collapsed ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
-      </GoogleButton>
+      </Button>
 
       {!collapsed && (
-        <div className={`bg-properties-background border-l border-properties-border flex flex-col transition-all duration-300 ease-in-out ${isMaximized ? 'w-96' : 'w-80'}`}>
+        <div className={`md-surface-container-low md-text-on-surface border-l border-md-sys-color-outline-variant/30 flex flex-col transition-all duration-md-medium3 ease-md-emphasized md-elevation-1 ${isMaximized ? 'w-96' : 'w-80'}`}>
           {/* Enhanced Header with Controls */}
-          <div className="p-4 border-b border-properties-border bg-properties-header">
+          <div className="p-4 border-b border-md-sys-color-outline-variant/30 md-surface-container">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Settings className="h-5 w-5 text-google-blue" />
-                <h2 className="font-semibold text-foreground">Properties</h2>
+                <Settings className="h-5 w-5 md-text-primary" />
+                <h2 className="md-typescale-title-medium font-roboto md-text-on-surface">Properties</h2>
               </div>
               <div className="flex items-center gap-1">
-                <GoogleButton
-                  variant="google-ghost"
-                  size="sm"
+                <Button
+                  variant="text"
+                  size="icon"
                   onClick={() => setIsMaximized(!isMaximized)}
-                  className="h-8 w-8 p-0"
+                  className="h-8 w-8 rounded-full"
                 >
                   {isMaximized ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-                </GoogleButton>
+                </Button>
               </div>
             </div>
           </div>
@@ -75,9 +75,9 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
             {selectedNode ? (
               <div className="p-4 space-y-6">
                 {/* Node Info */}
-                <Card className="border-border/50 shadow-sm">
+                <Card variant="elevated" className="md-elevation-1">
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-sm flex items-center gap-2">
+                    <CardTitle className="md-typescale-title-small font-roboto flex items-center gap-2">
                       <span className="text-lg">{(selectedNode.data as any).icon}</span>
                       Node Information
                     </CardTitle>
@@ -85,19 +85,19 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
                   <CardContent className="space-y-3">
                     <div className="flex items-center gap-2">
                       <Badge 
-                        variant="outline"
-                        className="border-google-blue text-google-blue bg-google-blue/5"
+                        variant="secondary"
+                        className="bg-md-primary-90/60 md-text-primary border-md-primary-80/40 md-typescale-label-small font-roboto rounded-full"
                       >
                         {selectedConfig?.type}
                       </Badge>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="md-typescale-body-small font-roboto md-text-on-surface-variant">
                         ID: {selectedNode.id}
                       </span>
                     </div>
                     
-                    <div className="text-sm">
-                      <span className="text-muted-foreground">Position: </span>
-                      <span className="font-mono text-google-blue">
+                    <div className="md-typescale-body-small font-roboto">
+                      <span className="md-text-on-surface-variant">Position: </span>
+                      <span className="font-mono text-md-sys-color-primary">
                         x: {Math.round(selectedNode.position.x)}, 
                         y: {Math.round(selectedNode.position.y)}
                       </span>
@@ -118,12 +118,12 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
             ) : (
               <div className="flex-1 flex items-center justify-center p-8">
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-google-blue/20 to-google-blue/5 rounded-full flex items-center justify-center mx-auto">
-                    <Info className="h-8 w-8 text-google-blue" />
+                  <div className="w-16 h-16 bg-md-sys-color-primary/12 rounded-full flex items-center justify-center mx-auto">
+                    <Info className="h-8 w-8 text-md-sys-color-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">No Selection</h3>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <h3 className="md-typescale-title-medium font-roboto text-md-sys-color-on-surface">No Selection</h3>
+                    <p className="md-typescale-body-medium font-roboto text-md-sys-color-on-surface-variant mt-1">
                       Select a node to view and edit its properties
                     </p>
                   </div>

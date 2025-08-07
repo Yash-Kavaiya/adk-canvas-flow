@@ -73,21 +73,21 @@ COPY main.py .
 CMD ["python", "main.py"]`;
 
   return (
-    <div className="h-full bg-code-background text-code-foreground flex flex-col">
+    <div className="h-full md-surface-container-lowest md-text-on-surface flex flex-col font-roboto">
       {/* Header */}
-      <div className="px-4 py-2 border-b border-border bg-surface">
+      <div className="px-4 py-3 border-b border-md-sys-color-outline-variant/30 md-surface-container">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <FileText className="h-4 w-4" />
-            <span className="text-sm font-medium">Generated Code</span>
-            <Badge variant="secondary" className="text-xs">
+            <FileText className="h-4 w-4 md-text-primary" />
+            <span className="md-typescale-title-medium font-medium md-text-on-surface">Generated Code</span>
+            <Badge variant="secondary" className="md-typescale-label-small bg-md-secondary-90/60 md-text-secondary border-md-secondary-80/40 rounded-full">
               Python
             </Badge>
           </div>
           
           <div className="flex items-center gap-2">
             <Button
-              variant="ghost"
+              variant="text"
               size="sm"
               onClick={generateCode}
               className="gap-2"
@@ -97,7 +97,7 @@ CMD ["python", "main.py"]`;
             </Button>
             
             <Button
-              variant="ghost"
+              variant="text"
               size="sm"
               onClick={handleCopyCode}
               className="gap-2"
@@ -107,7 +107,7 @@ CMD ["python", "main.py"]`;
             </Button>
             
             <Button
-              variant="ghost"
+              variant="filled"
               size="sm"
               onClick={handleDownloadCode}
               className="gap-2"
@@ -121,16 +121,16 @@ CMD ["python", "main.py"]`;
 
       {/* Code Tabs */}
       <Tabs defaultValue="main" className="flex-1 flex flex-col">
-        <TabsList className="w-full justify-start rounded-none bg-surface border-b border-border p-0">
-          <TabsTrigger value="main" className="gap-2">
+        <TabsList className="w-full justify-start rounded-none md-surface-container-high border-b border-md-sys-color-outline-variant/30 p-0">
+          <TabsTrigger value="main" className="gap-2 md-text-on-surface hover:md-surface-container data-[state=active]:md-surface-primary data-[state=active]:md-text-on-primary md-typescale-label-large">
             <FileText className="h-4 w-4" />
             main.py
           </TabsTrigger>
-          <TabsTrigger value="config" className="gap-2">
+          <TabsTrigger value="config" className="gap-2 md-text-on-surface hover:md-surface-container data-[state=active]:md-surface-primary data-[state=active]:md-text-on-primary md-typescale-label-large">
             <Braces className="h-4 w-4" />
             Project Config
           </TabsTrigger>
-          <TabsTrigger value="requirements" className="gap-2">
+          <TabsTrigger value="requirements" className="gap-2 md-text-on-surface hover:md-surface-container data-[state=active]:md-surface-primary data-[state=active]:md-text-on-primary md-typescale-label-large">
             <Settings className="h-4 w-4" />
             Deployment
           </TabsTrigger>
@@ -141,53 +141,54 @@ CMD ["python", "main.py"]`;
             height="100%"
             defaultLanguage="python"
             value={generatedCode}
-            theme="vs-dark"
+            theme="light"
             options={{
               readOnly: true,
               minimap: { enabled: false },
               scrollBeyondLastLine: false,
               fontSize: 13,
-              fontFamily: 'JetBrains Mono, Consolas, monospace',
+              fontFamily: 'Roboto Mono, JetBrains Mono, Consolas, monospace',
               wordWrap: 'on',
               lineNumbers: 'on',
               folding: true,
               renderWhitespace: 'selection',
+              background: 'rgb(var(--md-sys-color-surface))',
             }}
           />
         </TabsContent>
 
-        <TabsContent value="config" className="flex-1 m-0 p-4 overflow-auto">
+        <TabsContent value="config" className="flex-1 m-0 p-4 overflow-auto md-surface-container">
           <div className="space-y-4">
-            <Card>
+            <Card variant="elevated" className="md-elevation-2">
               <CardHeader>
-                <CardTitle className="text-lg">Project Configuration</CardTitle>
+                <CardTitle className="md-typescale-title-large md-text-on-surface">Project Configuration</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-2 gap-4 md-typescale-body-medium">
                   <div>
-                    <span className="text-muted-foreground">Name:</span>
-                    <p className="font-medium">{projectConfig.name}</p>
+                    <span className="md-text-on-surface-variant">Name:</span>
+                    <p className="font-medium md-text-on-surface">{projectConfig.name}</p>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">Agents:</span>
-                    <p className="font-medium">{projectConfig.agents}</p>
+                    <span className="md-text-on-surface-variant">Agents:</span>
+                    <p className="font-medium md-text-on-surface">{projectConfig.agents}</p>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">Connections:</span>
-                    <p className="font-medium">{projectConfig.connections}</p>
+                    <span className="md-text-on-surface-variant">Connections:</span>
+                    <p className="font-medium md-text-on-surface">{projectConfig.connections}</p>
                   </div>
                   <div>
-                    <span className="text-muted-foreground">Tools:</span>
-                    <p className="font-medium">{projectConfig.tools}</p>
+                    <span className="md-text-on-surface-variant">Tools:</span>
+                    <p className="font-medium md-text-on-surface">{projectConfig.tools}</p>
                   </div>
                 </div>
                 
                 {projectConfig.description && (
                   <>
-                    <Separator />
+                    <Separator className="bg-md-sys-color-outline-variant/30" />
                     <div>
-                      <span className="text-muted-foreground text-sm">Description:</span>
-                      <p className="mt-1">{projectConfig.description}</p>
+                      <span className="md-text-on-surface-variant md-typescale-body-medium">Description:</span>
+                      <p className="mt-1 md-text-on-surface md-typescale-body-medium">{projectConfig.description}</p>
                     </div>
                   </>
                 )}
@@ -196,25 +197,25 @@ CMD ["python", "main.py"]`;
           </div>
         </TabsContent>
 
-        <TabsContent value="requirements" className="flex-1 m-0 p-4 overflow-auto">
+        <TabsContent value="requirements" className="flex-1 m-0 p-4 overflow-auto md-surface-container">
           <div className="space-y-4">
-            <Card>
+            <Card variant="elevated" className="md-elevation-2">
               <CardHeader>
-                <CardTitle className="text-lg">requirements.txt</CardTitle>
+                <CardTitle className="md-typescale-title-large md-text-on-surface">requirements.txt</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="text-sm font-mono bg-muted p-3 rounded border overflow-x-auto">
+                <pre className="md-typescale-body-small font-mono md-surface-container-high md-text-on-surface p-3 rounded border-md-sys-color-outline-variant/30 overflow-x-auto border">
                   {requirementsTxt}
                 </pre>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card variant="elevated" className="md-elevation-2">
               <CardHeader>
-                <CardTitle className="text-lg">Dockerfile</CardTitle>
+                <CardTitle className="md-typescale-title-large md-text-on-surface">Dockerfile</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="text-sm font-mono bg-muted p-3 rounded border overflow-x-auto">
+                <pre className="md-typescale-body-small font-mono md-surface-container-high md-text-on-surface p-3 rounded border-md-sys-color-outline-variant/30 overflow-x-auto border">
                   {dockerFile}
                 </pre>
               </CardContent>

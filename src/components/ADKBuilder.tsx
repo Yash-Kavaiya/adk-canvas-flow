@@ -21,7 +21,7 @@ export const ADKBuilder: React.FC = () => {
   }, [initializeComponentLibrary]);
 
   return (
-    <div className="w-full h-screen bg-background flex flex-col font-inter overflow-hidden">
+    <div className="adk-app-container w-full h-screen md-surface-container-lowest flex flex-col font-roboto overflow-hidden">
       {/* Header */}
       <Header />
       
@@ -36,7 +36,7 @@ export const ADKBuilder: React.FC = () => {
           
           {/* Bottom Code View */}
           {codeViewVisible && (
-            <div className="h-80 border-t border-border">
+            <div className="h-80 border-t border-md-sys-color-outline-variant/30 md-surface-container">
               <CodeView />
             </div>
           )}
