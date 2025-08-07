@@ -1,6 +1,7 @@
 import React from 'react';
 import { useADKStore } from '@/store/adkStore';
 import { Button } from '@/components/ui/button';
+import { GoogleButton } from '@/components/ui/google-button';
 import { 
   Menu, 
   Save, 
@@ -32,91 +33,87 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="h-12 bg-surface border-b border-border flex items-center px-4 gap-2">
+    <header className="h-16 bg-surface border-b border-border flex items-center px-6 gap-4 shadow-sm">
       {/* Left section */}
-      <div className="flex items-center gap-2">
-        <Button
-          variant="ghost"
+      <div className="flex items-center gap-4">
+        <GoogleButton
+          variant="google-ghost"
           size="sm"
           onClick={toggleSidebar}
-          className="p-2 h-8 w-8"
+          className="rounded-lg"
         >
           <Menu className="h-4 w-4" />
-        </Button>
+        </GoogleButton>
         
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-google-blue rounded flex items-center justify-center">
-            <span className="text-white text-xs font-bold">G</span>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-xl flex items-center justify-center shadow-sm">
+            <span className="text-white text-lg font-bold">G</span>
           </div>
-          <span className="font-semibold text-foreground">ADK Visual Builder</span>
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold text-foreground">Google ADK Builder</span>
+            {currentProject && (
+              <span className="text-sm text-muted-foreground">{currentProject.name}</span>
+            )}
+          </div>
         </div>
-        
-        <Separator orientation="vertical" className="h-6 mx-2" />
-        
-        {currentProject && (
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Project:</span>
-            <span className="text-sm font-medium">{currentProject.name}</span>
-          </div>
-        )}
       </div>
 
       {/* Center section - Quick actions */}
-      <div className="flex-1 flex items-center justify-center gap-2">
-        <Button
-          variant="outline"
-          size="sm"
+      <div className="flex-1 flex items-center justify-center gap-3">
+        <GoogleButton
+          variant="google-outline"
+          size="default"
           onClick={handleSave}
-          className="gap-2"
+          className="font-medium gap-2"
         >
           <Save className="h-4 w-4" />
-          Save
-        </Button>
+          Save Project
+        </GoogleButton>
         
-        <Button
-          variant={testModeActive ? "default" : "outline"}
-          size="sm"
+        <GoogleButton
+          variant={testModeActive ? "google-green" : "google-outline"}
+          size="default"
           onClick={toggleTestMode}
-          className="gap-2"
+          className="font-medium gap-2"
         >
           <Play className="h-4 w-4" />
-          Test
-        </Button>
+          {testModeActive ? "Testing..." : "Test"}
+        </GoogleButton>
         
-        <Button
-          variant={codeViewVisible ? "default" : "outline"}
-          size="sm"
+        <GoogleButton
+          variant={codeViewVisible ? "google-blue" : "google-outline"}
+          size="default"
           onClick={toggleCodeView}
-          className="gap-2"
+          className="font-medium gap-2"
         >
           <Code className="h-4 w-4" />
-          Code
-        </Button>
+          {codeViewVisible ? "Hide Code" : "View Code"}
+        </GoogleButton>
       </div>
 
       {/* Right section */}
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="sm" className="p-2 h-8 w-8">
+        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
           <Download className="h-4 w-4" />
-        </Button>
+        </GoogleButton>
         
-        <Button variant="ghost" size="sm" className="p-2 h-8 w-8">
+        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
           <Upload className="h-4 w-4" />
-        </Button>
+        </GoogleButton>
         
-        <Button variant="ghost" size="sm" className="p-2 h-8 w-8">
+        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
           <Settings className="h-4 w-4" />
-        </Button>
+        </GoogleButton>
         
-        <Separator orientation="vertical" className="h-6 mx-1" />
+        <Separator orientation="vertical" className="h-6 mx-2" />
         
-        <Button variant="ghost" size="sm" className="p-2 h-8 w-8">
+        <GoogleButton variant="google-ghost" size="sm" className="rounded-lg">
           <HelpCircle className="h-4 w-4" />
-        </Button>
+        </GoogleButton>
         
-        <Button variant="ghost" size="sm" className="p-2 h-8 w-8">
-          <User className="h-4 w-4" />
-        </Button>
+        <div className="w-9 h-9 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-full flex items-center justify-center cursor-pointer hover:shadow-md transition-all duration-200 hover:scale-105">
+          <User className="h-4 w-4 text-white" />
+        </div>
       </div>
     </header>
   );

@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { GoogleButton } from '@/components/ui/google-button';
 
 interface ComponentSidebarProps {
   collapsed: boolean;
@@ -25,9 +26,8 @@ const ComponentItem: React.FC<ComponentItemProps> = ({ item, collapsed }) => {
       <div
         draggable
         onDragStart={handleDragStart}
-        className="component-item w-12 h-12 bg-surface border border-border rounded-lg flex items-center justify-center cursor-grab hover:shadow-md transition-all duration-200"
+        className="component-item w-12 h-12 bg-surface border-2 border-border rounded-xl flex items-center justify-center cursor-grab hover:shadow-lg hover:scale-105 transition-all duration-200 hover:border-google-blue"
         title={item.name}
-        style={{ borderColor: item.color }}
       >
         <span className="text-lg">{item.icon}</span>
       </div>
@@ -38,11 +38,12 @@ const ComponentItem: React.FC<ComponentItemProps> = ({ item, collapsed }) => {
     <Card
       draggable
       onDragStart={handleDragStart}
-      className="component-item p-3 cursor-grab hover:shadow-md transition-all duration-200 border-l-4"
-      style={{ borderLeftColor: item.color }}
+      className="component-item p-4 cursor-grab hover:shadow-lg hover:scale-[1.02] transition-all duration-200 border border-border/50 hover:border-google-blue/50 rounded-lg bg-gradient-to-r from-surface to-surface-bright"
     >
       <div className="flex items-center gap-3">
-        <span className="text-xl">{item.icon}</span>
+        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-google-blue/10 to-google-blue/5 flex items-center justify-center">
+          <span className="text-lg">{item.icon}</span>
+        </div>
         <div className="flex-1 min-w-0">
           <h4 className="font-medium text-sm text-foreground truncate">{item.name}</h4>
           <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{item.description}</p>
@@ -70,16 +71,16 @@ const ComponentGroup: React.FC<ComponentGroupProps> = ({ title, items, collapsed
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <div className="flex items-center gap-2">
         <h3 className="font-semibold text-sm text-foreground uppercase tracking-wide">
           {title}
         </h3>
-        <Badge variant="secondary" className="text-xs">
+        <Badge variant="secondary" className="text-xs bg-google-blue/10 text-google-blue border-google-blue/20">
           {items.length}
         </Badge>
       </div>
-      <div className="space-y-2">
+      <div className="space-y-3">
         {items.map((item) => (
           <ComponentItem key={item.id} item={item} collapsed={false} />
         ))}
@@ -97,28 +98,33 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
 
   return (
     <div 
-      className={`bg-sidebar border-r border-sidebar-border transition-all duration-300 ${
-        collapsed ? 'w-16' : 'w-64'
+      className={`bg-sidebar border-r border-sidebar-border transition-all duration-300 shadow-sm ${
+        collapsed ? 'w-16' : 'w-72'
       }`}
     >
       <div className="h-full flex flex-col">
         {/* Header */}
-        <div className="p-3 border-b border-sidebar-border">
+        <div className="p-4 border-b border-sidebar-border bg-properties-header">
           {!collapsed && (
-            <h2 className="font-semibold text-sidebar-foreground">Components</h2>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-google-blue to-google-blue-dark rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">C</span>
+              </div>
+              <h2 className="font-semibold text-sidebar-foreground">Component Library</h2>
+            </div>
           )}
         </div>
 
         {/* Component Library */}
-        <ScrollArea className="flex-1 p-3">
-          <div className={`space-y-6 ${collapsed ? 'space-y-3' : ''}`}>
+        <ScrollArea className="flex-1 p-4">
+          <div className={`space-y-6 ${collapsed ? 'space-y-4' : ''}`}>
             <ComponentGroup 
               title="Agents" 
               items={agentComponents} 
               collapsed={collapsed}
             />
             
-            {!collapsed && <Separator />}
+            {!collapsed && <Separator className="bg-border/50" />}
             
             <ComponentGroup 
               title="Workflow" 
@@ -126,7 +132,7 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
               collapsed={collapsed}
             />
             
-            {!collapsed && <Separator />}
+            {!collapsed && <Separator className="bg-border/50" />}
             
             <ComponentGroup 
               title="Tools" 
