@@ -32,8 +32,11 @@ export default {
 					DEFAULT: 'hsl(var(--surface))',
 					dim: 'hsl(var(--surface-dim))',
 					bright: 'hsl(var(--surface-bright))',
+					container: 'hsl(var(--surface-container))',
+					'container-high': 'hsl(var(--surface-container-high))',
 				},
 				'google-blue': 'hsl(var(--google-blue))',
+				'google-blue-dark': 'hsl(var(--google-blue-dark))',
 				'google-green': 'hsl(var(--google-green))',
 				'google-yellow': 'hsl(var(--google-yellow))',
 				'google-red': 'hsl(var(--google-red))',
@@ -97,6 +100,7 @@ export default {
 				properties: {
 					background: 'hsl(var(--properties-background))',
 					border: 'hsl(var(--properties-border))',
+					header: 'hsl(var(--properties-header))',
 				},
 				code: {
 					background: 'hsl(var(--code-background))',
