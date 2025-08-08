@@ -1,5 +1,6 @@
 import React from 'react';
 import { useADKStore, AgentConfig } from '@/store/adkStore';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
@@ -14,24 +15,33 @@ interface PropertiesPanelProps {
 }
 
 export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) => {
-  const { nodes, selectedNodeId, updateNode, togglePropertiesPanel } = useADKStore();
+  const nodes = useADKStore(s => s.nodes);
+  const selectedNodeId = useADKStore(s => s.selectedNodeId);
+  const updateNode = useADKStore(s => s.updateNode);
+  const togglePropertiesPanel = useADKStore(s => s.togglePropertiesPanel);
   const [isMaximized, setIsMaximized] = React.useState(false);
 
-  const selectedNode = selectedNodeId 
-    ? nodes.find(node => node.id === selectedNodeId)
-    : null;
+  const selectedNode = React.useMemo(() => (
+    selectedNodeId ? nodes.find(node => node.id === selectedNodeId) : null
+  ), [nodes, selectedNodeId]);
 
-  const selectedConfig = selectedNode?.data?.config as AgentConfig | undefined;
+  const selectedConfig = React.useMemo(() => (
+    selectedNode?.data?.config as AgentConfig | undefined
+  ), [selectedNode]);
 
   const handleConfigUpdate = (updates: Partial<AgentConfig>) => {
     if (!selectedNode) return;
-    
-    const updatedConfig = { ...selectedConfig, ...updates };
+
+    const updatedConfig = { ...selectedConfig, ...updates } as AgentConfig;
+    if (JSON.stringify(updatedConfig) === JSON.stringify(selectedConfig)) {
+      return;
+    }
+
     updateNode(selectedNode.id, {
       data: {
         ...selectedNode.data,
         config: updatedConfig,
-        label: updatedConfig.name || selectedNode.data.label
+        label: updatedConfig.name || (selectedNode.data as any).label
       }
     });
   };
@@ -49,7 +59,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
       </Button>
 
       {!collapsed && (
-        <div className={`md-surface-container-low md-text-on-surface border-l border-md-sys-color-outline-variant/30 flex flex-col transition-all duration-md-medium3 ease-md-emphasized md-elevation-1 ${isMaximized ? 'w-96' : 'w-80'}`}>
+        <div className={`md-surface-container-low md-text-on-surface border-l border-md-sys-color-outline-variant/30 flex flex-col transition-[width] duration-md-medium3 ease-md-emphasized md-elevation-1 ${isMaximized ? 'w-96' : 'w-80'}`}>
           {/* Enhanced Header with Controls */}
           <div className="p-4 border-b border-md-sys-color-outline-variant/30 md-surface-container">
             <div className="flex items-center justify-between">
