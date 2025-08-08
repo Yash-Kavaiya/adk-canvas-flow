@@ -54,7 +54,7 @@ export const MaterialElevationDemo: React.FC = () => {
               <Button className="w-full md-button-filled">
                 Filled Button
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button variant="outlined" className="w-full">
                 Outlined Button
               </Button>
               <Button variant="ghost" className="w-full">

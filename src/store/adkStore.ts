@@ -26,8 +26,28 @@ export interface AgentConfig {
     threshold: 'OFF' | 'LOW' | 'MEDIUM' | 'HIGH';
   }>;
   // Tool-specific properties
-  tool_type?: string;
+  tool_type?: string; // 'function' | 'long_running' | 'agent' | 'builtin' | 'toolset' | ...
   requires_gemini_2?: boolean;
+  // Function tool attributes
+  function_signature?: {
+    params?: Array<{ name: string; type?: string; required?: boolean; default?: any; description?: string }>;
+    return_type?: string;
+    docstring?: string;
+  };
+  is_long_running?: boolean;
+  is_agent_tool?: boolean;
+  skip_summarization?: boolean;
+  // Auth metadata for tools that require it
+  auth?: {
+    requires_auth?: boolean;
+    auth_type?: 'apikey' | 'oauth2' | 'service_account' | 'bearer' | 'none';
+    scopes?: string[];
+  };
+  // Built-in constraints and metadata
+  built_in_constraints?: {
+    single_tool_restriction?: boolean;
+    no_sub_agents?: boolean;
+  };
 }
 
 export interface ComponentLibraryItem {
