@@ -47,20 +47,28 @@ export const CanvasArea: React.FC = () => {
 
   // Sync local state with store
   React.useEffect(() => {
-    setLocalNodes(nodes);
-  }, [nodes, setLocalNodes]);
+    if (localNodes !== nodes) {
+      setLocalNodes(nodes);
+    }
+  }, [nodes, setLocalNodes, localNodes]);
 
   React.useEffect(() => {
-    setLocalEdges(edges);
-  }, [edges, setLocalEdges]);
+    if (localEdges !== edges) {
+      setLocalEdges(edges);
+    }
+  }, [edges, setLocalEdges, localEdges]);
 
   React.useEffect(() => {
-    setNodes(localNodes);
-  }, [localNodes, setNodes]);
+    if (localNodes !== nodes) {
+      setNodes(localNodes);
+    }
+  }, [localNodes, setNodes, nodes]);
 
   React.useEffect(() => {
-    setEdges(localEdges);
-  }, [localEdges, setEdges]);
+    if (localEdges !== edges) {
+      setEdges(localEdges);
+    }
+  }, [localEdges, setEdges, edges]);
 
   const onConnect = useCallback(
     (params: Connection) => {
