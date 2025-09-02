@@ -91,7 +91,10 @@ export const CanvasArea: React.FC = () => {
 
   const onDragLeave = useCallback((event: React.DragEvent) => {
     event.preventDefault();
-    setIsDraggingOver(false);
+    // Only set to false if we're leaving the canvas area itself, not child elements
+    if (!event.currentTarget.contains(event.relatedTarget as Element)) {
+      setIsDraggingOver(false);
+    }
   }, []);
 
   const onDrop = useCallback(
