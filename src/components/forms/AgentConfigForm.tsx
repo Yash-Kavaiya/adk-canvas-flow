@@ -65,7 +65,7 @@ export const AgentConfigForm: React.FC<AgentConfigFormProps> = ({ config, onUpda
             <div className="flex items-center justify-between">
               <Label>Temperature</Label>
               <Badge variant="outline" className="text-xs">
-                {config.temperature || 0.7}
+                {String(config.temperature || 0.7)}
               </Badge>
             </div>
             <Slider
@@ -82,7 +82,7 @@ export const AgentConfigForm: React.FC<AgentConfigFormProps> = ({ config, onUpda
             <div className="flex items-center justify-between">
               <Label>Max Output Tokens</Label>
               <Badge variant="outline" className="text-xs">
-                {config.max_output_tokens || 1000}
+                {String(config.max_output_tokens || 1000)}
               </Badge>
             </div>
             <Slider
@@ -174,7 +174,7 @@ export const AgentConfigForm: React.FC<AgentConfigFormProps> = ({ config, onUpda
             <Label htmlFor="name">Name</Label>
             <Input
               id="name"
-              value={config.name}
+              value={String(config.name || '')}
               onChange={(e) => handleInputChange('name', e.target.value)}
               placeholder="Agent name"
             />
@@ -184,7 +184,7 @@ export const AgentConfigForm: React.FC<AgentConfigFormProps> = ({ config, onUpda
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
-              value={config.description}
+              value={String(config.description || '')}
               onChange={(e) => handleInputChange('description', e.target.value)}
               placeholder="Agent description"
               rows={2}

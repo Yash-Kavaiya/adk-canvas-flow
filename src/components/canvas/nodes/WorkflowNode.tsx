@@ -38,16 +38,16 @@ export const WorkflowNode: React.FC<NodeProps> = ({ data, selected }) => {
         <div className="flex items-center gap-2 mb-2">
           <span className="text-lg">{icon}</span>
           <div className="flex-1 min-w-0">
-            <h4 className="font-medium text-sm truncate">{config.name}</h4>
+            <h4 className="font-medium text-sm truncate">{String(config.name)}</h4>
             <Badge variant="outline" className="text-xs mt-1">
-              {config.execution}
+              {String(config.execution || 'sequential')}
             </Badge>
           </div>
         </div>
         
         {config.description && (
           <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
-            {config.description}
+            {String(config.description)}
           </p>
         )}
         

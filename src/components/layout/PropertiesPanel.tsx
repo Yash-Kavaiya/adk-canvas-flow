@@ -98,18 +98,18 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
                         variant="secondary"
                         className="bg-md-primary-90/60 md-text-primary border-md-primary-80/40 md-typescale-label-small font-roboto rounded-full"
                       >
-                        {selectedConfig?.type}
+                        {String(selectedConfig?.type || '')}
                       </Badge>
                       <span className="md-typescale-body-small font-roboto md-text-on-surface-variant">
-                        ID: {selectedNode.id}
+                        ID: {String(selectedNode.id)}
                       </span>
                     </div>
                     
                     <div className="md-typescale-body-small font-roboto">
                       <span className="md-text-on-surface-variant">Position: </span>
                       <span className="font-mono text-md-sys-color-primary">
-                        x: {Math.round(selectedNode.position.x)}, 
-                        y: {Math.round(selectedNode.position.y)}
+                        x: {Math.round(selectedNode.position?.x || 0)}, 
+                        y: {Math.round(selectedNode.position?.y || 0)}
                       </span>
                     </div>
                   </CardContent>

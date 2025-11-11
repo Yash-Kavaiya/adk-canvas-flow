@@ -25,9 +25,9 @@ export const AgentNode: React.FC<NodeProps> = ({ data, selected }) => {
         <div className="flex items-center gap-2 mb-2">
           <span className="text-lg">{icon}</span>
           <div className="flex-1 min-w-0">
-            <h4 className="font-medium text-sm truncate md-text-on-surface md-typescale-label-large">{config.name}</h4>
+            <h4 className="font-medium text-sm truncate md-text-on-surface md-typescale-label-large">{String(config.name)}</h4>
             <Badge variant="outline" className="text-xs mt-1 bg-md-primary-90/60 md-text-primary border-md-primary-80/40 rounded-full">
-              {config.type}
+              {String(config.type)}
             </Badge>
           </div>
           {config.model && (
@@ -37,9 +37,9 @@ export const AgentNode: React.FC<NodeProps> = ({ data, selected }) => {
           )}
         </div>
         
-        {config.description && (
+          {config.description && (
           <p className="text-xs md-text-on-surface-variant line-clamp-2 mb-2 md-typescale-body-small">
-            {config.description}
+            {String(config.description)}
           </p>
         )}
         
