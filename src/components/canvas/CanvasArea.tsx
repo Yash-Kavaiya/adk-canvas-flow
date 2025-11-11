@@ -32,7 +32,8 @@ const getId = () => `node_${nodeId++}`;
 export const CanvasArea: React.FC = () => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [isDraggingOver, setIsDraggingOver] = React.useState(false);
-  const { 
+
+  const {
     nodes,
     edges,
     setNodes,
@@ -45,30 +46,41 @@ export const CanvasArea: React.FC = () => {
   const [localNodes, setLocalNodes, onNodesChange] = useNodesState(nodes);
   const [localEdges, setLocalEdges, onEdgesChange] = useEdgesState(edges);
 
-  // Sync local state with store
+  // Use refs to store previous values and prevent circular updates
+  const prevNodesRef = useRef(nodes);
+  const prevEdgesRef = useRef(edges);
+  const prevLocalNodesRef = useRef(localNodes);
+  const prevLocalEdgesRef = useRef(localEdges);
+
+  // Sync FROM store TO local (when store changes externally, e.g., addNode)
   React.useEffect(() => {
-    if (localNodes !== nodes) {
+    if (nodes !== prevNodesRef.current) {
+      prevNodesRef.current = nodes;
       setLocalNodes(nodes);
     }
-  }, [nodes, setLocalNodes, localNodes]);
+  }, [nodes, setLocalNodes]);
 
   React.useEffect(() => {
-    if (localEdges !== edges) {
+    if (edges !== prevEdgesRef.current) {
+      prevEdgesRef.current = edges;
       setLocalEdges(edges);
     }
-  }, [edges, setLocalEdges, localEdges]);
+  }, [edges, setLocalEdges]);
 
+  // Sync FROM local TO store (when React Flow changes nodes/edges)
   React.useEffect(() => {
-    if (localNodes !== nodes) {
+    if (localNodes !== prevLocalNodesRef.current) {
+      prevLocalNodesRef.current = localNodes;
       setNodes(localNodes);
     }
-  }, [localNodes, setNodes, nodes]);
+  }, [localNodes, setNodes]);
 
   React.useEffect(() => {
-    if (localEdges !== edges) {
+    if (localEdges !== prevLocalEdgesRef.current) {
+      prevLocalEdgesRef.current = localEdges;
       setEdges(localEdges);
     }
-  }, [localEdges, setEdges, edges]);
+  }, [localEdges, setEdges]);
 
   const onConnect = useCallback(
     (params: Connection) => {
