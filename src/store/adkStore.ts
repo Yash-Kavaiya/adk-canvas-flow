@@ -30,7 +30,7 @@ export interface AgentConfig {
   requires_gemini_2?: boolean;
   // Function tool attributes
   function_signature?: {
-    params?: Array<{ name: string; type?: string; required?: boolean; default?: any; description?: string }>;
+    params?: Array<{ name: string; type?: string; required?: boolean; default?: string | number | boolean | null; description?: string }>;
     return_type?: string;
     docstring?: string;
   };
@@ -69,7 +69,7 @@ export interface Project {
   updated_at: string;
   nodes: Node[];
   edges: Edge[];
-  config: Record<string, any>;
+  config: Record<string, string | number | boolean | null | undefined>;
 }
 
 interface ADKStore {
