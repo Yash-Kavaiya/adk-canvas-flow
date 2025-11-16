@@ -72,7 +72,7 @@ export const CodeView: React.FC = () => {
     description: currentProject?.description || '',
     agents: nodes.length,
     connections: edges.length,
-    tools: nodes.filter(n => (n.data as any)?.config?.type === 'tool').length
+    tools: nodes.filter(n => (n.data as { config?: { type?: string } })?.config?.type === 'tool').length
   };
 
   const requirementsTxt = `google-adk>=1.0.0

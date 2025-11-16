@@ -41,7 +41,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
       data: {
         ...selectedNode.data,
         config: updatedConfig,
-        label: updatedConfig.name || (selectedNode.data as any).label
+        label: updatedConfig.name || (selectedNode.data as { label?: string }).label
       }
     });
   };
@@ -88,7 +88,7 @@ export const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ collapsed }) =
                 <Card variant="elevated" className="md-elevation-1">
                   <CardHeader className="pb-3">
                     <CardTitle className="md-typescale-title-small font-roboto flex items-center gap-2">
-                      <span className="text-lg">{(selectedNode.data as any).icon}</span>
+                      <span className="text-lg">{(selectedNode.data as { icon?: string }).icon}</span>
                       Node Information
                     </CardTitle>
                   </CardHeader>

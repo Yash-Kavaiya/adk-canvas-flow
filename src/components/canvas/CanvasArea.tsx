@@ -219,7 +219,7 @@ export const CanvasArea: React.FC = () => {
           zoomable
           pannable
           nodeColor={(node) => {
-            const nodeData = node.data as any;
+            const nodeData = node.data as { color?: string };
             return nodeData.color || 'rgb(var(--md-sys-color-primary))';
           }}
         />
