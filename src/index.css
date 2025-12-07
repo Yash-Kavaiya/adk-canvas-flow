@@ -11,106 +11,171 @@
 @layer base {
   :root {
     /* Material Design 3 Primary Color Palette (Google Blue #1a73e8) */
-    --md-sys-color-primary-0: 0 0 0;                    /* Black */
-    --md-sys-color-primary-10: 1 15 38;                 /* Very dark blue */
-    --md-sys-color-primary-20: 1 28 54;                 /* Dark blue */
-    --md-sys-color-primary-30: 10 55 104;               /* Medium dark blue */
-    --md-sys-color-primary-40: 26 115 232;              /* Google Blue #1a73e8 */
-    --md-sys-color-primary-50: 66 133 244;              /* Google Blue Light */
-    --md-sys-color-primary-60: 103 157 250;             /* Light blue */
-    --md-sys-color-primary-70: 138 180 248;             /* Lighter blue */
-    --md-sys-color-primary-80: 174 203 250;             /* Very light blue */
-    --md-sys-color-primary-90: 220 237 255;             /* Almost white blue */
-    --md-sys-color-primary-95: 240 247 255;             /* Nearly white blue */
-    --md-sys-color-primary-99: 251 253 255;             /* White with blue tint */
-    --md-sys-color-primary-100: 255 255 255;            /* Pure white */
+    --md-sys-color-primary-0: 0 0 0;
+    /* Black */
+    --md-sys-color-primary-10: 1 15 38;
+    /* Very dark blue */
+    --md-sys-color-primary-20: 1 28 54;
+    /* Dark blue */
+    --md-sys-color-primary-30: 10 55 104;
+    /* Medium dark blue */
+    --md-sys-color-primary-40: 26 115 232;
+    /* Google Blue #1a73e8 */
+    --md-sys-color-primary-50: 66 133 244;
+    /* Google Blue Light */
+    --md-sys-color-primary-60: 103 157 250;
+    /* Light blue */
+    --md-sys-color-primary-70: 138 180 248;
+    /* Lighter blue */
+    --md-sys-color-primary-80: 174 203 250;
+    /* Very light blue */
+    --md-sys-color-primary-90: 220 237 255;
+    /* Almost white blue */
+    --md-sys-color-primary-95: 240 247 255;
+    /* Nearly white blue */
+    --md-sys-color-primary-99: 251 253 255;
+    /* White with blue tint */
+    --md-sys-color-primary-100: 255 255 255;
+    /* Pure white */
 
     /* Material Design 3 Secondary Color Palette (Google Gray) */
-    --md-sys-color-secondary-0: 0 0 0;                  /* Black */
-    --md-sys-color-secondary-10: 22 26 31;              /* Very dark gray */
-    --md-sys-color-secondary-20: 41 50 65;              /* Dark gray */
-    --md-sys-color-secondary-30: 64 71 88;              /* Medium dark gray */
-    --md-sys-color-secondary-40: 95 99 104;             /* Google Gray */
-    --md-sys-color-secondary-50: 128 134 139;           /* Medium gray */
-    --md-sys-color-secondary-60: 154 160 166;           /* Light gray */
-    --md-sys-color-secondary-70: 189 193 198;           /* Lighter gray */
-    --md-sys-color-secondary-80: 218 220 224;           /* Very light gray */
-    --md-sys-color-secondary-90: 238 239 241;           /* Almost white gray */
-    --md-sys-color-secondary-95: 248 249 250;           /* Nearly white gray */
-    --md-sys-color-secondary-99: 254 254 254;           /* White with gray tint */
-    --md-sys-color-secondary-100: 255 255 255;          /* Pure white */
+    --md-sys-color-secondary-0: 0 0 0;
+    /* Black */
+    --md-sys-color-secondary-10: 22 26 31;
+    /* Very dark gray */
+    --md-sys-color-secondary-20: 41 50 65;
+    /* Dark gray */
+    --md-sys-color-secondary-30: 64 71 88;
+    /* Medium dark gray */
+    --md-sys-color-secondary-40: 95 99 104;
+    /* Google Gray */
+    --md-sys-color-secondary-50: 128 134 139;
+    /* Medium gray */
+    --md-sys-color-secondary-60: 154 160 166;
+    /* Light gray */
+    --md-sys-color-secondary-70: 189 193 198;
+    /* Lighter gray */
+    --md-sys-color-secondary-80: 218 220 224;
+    /* Very light gray */
+    --md-sys-color-secondary-90: 238 239 241;
+    /* Almost white gray */
+    --md-sys-color-secondary-95: 248 249 250;
+    /* Nearly white gray */
+    --md-sys-color-secondary-99: 254 254 254;
+    /* White with gray tint */
+    --md-sys-color-secondary-100: 255 255 255;
+    /* Pure white */
 
     /* Material Design 3 Tertiary Color Palette (Google Green) */
-    --md-sys-color-tertiary-0: 0 0 0;                   /* Black */
-    --md-sys-color-tertiary-10: 14 44 21;               /* Very dark green */
-    --md-sys-color-tertiary-20: 21 68 32;               /* Dark green */
-    --md-sys-color-tertiary-30: 27 94 32;               /* Medium dark green */
-    --md-sys-color-tertiary-40: 52 168 83;              /* Google Green #34a853 */
-    --md-sys-color-tertiary-50: 76 175 80;              /* Medium green */
-    --md-sys-color-tertiary-60: 129 201 149;            /* Light green */
-    --md-sys-color-tertiary-70: 165 214 167;            /* Lighter green */
-    --md-sys-color-tertiary-80: 200 230 201;            /* Very light green */
-    --md-sys-color-tertiary-90: 232 245 233;            /* Almost white green */
-    --md-sys-color-tertiary-95: 243 250 244;            /* Nearly white green */
-    --md-sys-color-tertiary-99: 253 254 253;            /* White with green tint */
-    --md-sys-color-tertiary-100: 255 255 255;           /* Pure white */
+    --md-sys-color-tertiary-0: 0 0 0;
+    /* Black */
+    --md-sys-color-tertiary-10: 14 44 21;
+    /* Very dark green */
+    --md-sys-color-tertiary-20: 21 68 32;
+    /* Dark green */
+    --md-sys-color-tertiary-30: 27 94 32;
+    /* Medium dark green */
+    --md-sys-color-tertiary-40: 52 168 83;
+    /* Google Green #34a853 */
+    --md-sys-color-tertiary-50: 76 175 80;
+    /* Medium green */
+    --md-sys-color-tertiary-60: 129 201 149;
+    /* Light green */
+    --md-sys-color-tertiary-70: 165 214 167;
+    /* Lighter green */
+    --md-sys-color-tertiary-80: 200 230 201;
+    /* Very light green */
+    --md-sys-color-tertiary-90: 232 245 233;
+    /* Almost white green */
+    --md-sys-color-tertiary-95: 243 250 244;
+    /* Nearly white green */
+    --md-sys-color-tertiary-99: 253 254 253;
+    /* White with green tint */
+    --md-sys-color-tertiary-100: 255 255 255;
+    /* Pure white */
 
     /* Material Design 3 Error Color Palette (Google Red) */
-    --md-sys-color-error-0: 0 0 0;                      /* Black */
-    --md-sys-color-error-10: 65 14 11;                  /* Very dark red */
-    --md-sys-color-error-20: 96 20 16;                  /* Dark red */
-    --md-sys-color-error-30: 147 0 10;                  /* Medium dark red */
-    --md-sys-color-error-40: 234 67 53;                 /* Google Red #ea4335 */
-    --md-sys-color-error-50: 244 67 54;                 /* Medium red */
-    --md-sys-color-error-60: 239 83 80;                 /* Light red */
-    --md-sys-color-error-70: 242 184 181;               /* Lighter red */
-    --md-sys-color-error-80: 249 222 220;               /* Very light red */
-    --md-sys-color-error-90: 252 238 238;               /* Almost white red */
-    --md-sys-color-error-95: 254 247 247;               /* Nearly white red */
-    --md-sys-color-error-99: 255 253 253;               /* White with red tint */
-    --md-sys-color-error-100: 255 255 255;              /* Pure white */
+    --md-sys-color-error-0: 0 0 0;
+    /* Black */
+    --md-sys-color-error-10: 65 14 11;
+    /* Very dark red */
+    --md-sys-color-error-20: 96 20 16;
+    /* Dark red */
+    --md-sys-color-error-30: 147 0 10;
+    /* Medium dark red */
+    --md-sys-color-error-40: 234 67 53;
+    /* Google Red #ea4335 */
+    --md-sys-color-error-50: 244 67 54;
+    /* Medium red */
+    --md-sys-color-error-60: 239 83 80;
+    /* Light red */
+    --md-sys-color-error-70: 242 184 181;
+    /* Lighter red */
+    --md-sys-color-error-80: 249 222 220;
+    /* Very light red */
+    --md-sys-color-error-90: 252 238 238;
+    /* Almost white red */
+    --md-sys-color-error-95: 254 247 247;
+    /* Nearly white red */
+    --md-sys-color-error-99: 255 253 253;
+    /* White with red tint */
+    --md-sys-color-error-100: 255 255 255;
+    /* Pure white */
 
     /* Material Design 3 Warning Color Palette (Professional Amber) */
-    --md-sys-color-warning-0: 0 0 0;                    /* Black */
-    --md-sys-color-warning-10: 25 17 8;                 /* Very dark amber */
-    --md-sys-color-warning-20: 51 34 16;                /* Dark amber */
-    --md-sys-color-warning-30: 76 51 24;                /* Medium dark amber */
-    --md-sys-color-warning-40: 217 119 6;               /* Professional amber #d97706 */
-    --md-sys-color-warning-50: 245 158 11;              /* Medium amber */
-    --md-sys-color-warning-60: 251 191 36;              /* Light amber */
-    --md-sys-color-warning-70: 252 211 77;              /* Lighter amber */
-    --md-sys-color-warning-80: 254 230 138;             /* Very light amber */
-    --md-sys-color-warning-90: 255 243 199;             /* Almost white amber */
-    --md-sys-color-warning-95: 255 251 235;             /* Nearly white amber */
-    --md-sys-color-warning-99: 255 254 251;             /* White with amber tint */
-    --md-sys-color-warning-100: 255 255 255;            /* Pure white */
+    --md-sys-color-warning-0: 0 0 0;
+    /* Black */
+    --md-sys-color-warning-10: 25 17 8;
+    /* Very dark amber */
+    --md-sys-color-warning-20: 51 34 16;
+    /* Dark amber */
+    --md-sys-color-warning-30: 76 51 24;
+    /* Medium dark amber */
+    --md-sys-color-warning-40: 217 119 6;
+    /* Professional amber #d97706 */
+    --md-sys-color-warning-50: 245 158 11;
+    /* Medium amber */
+    --md-sys-color-warning-60: 251 191 36;
+    /* Light amber */
+    --md-sys-color-warning-70: 252 211 77;
+    /* Lighter amber */
+    --md-sys-color-warning-80: 254 230 138;
+    /* Very light amber */
+    --md-sys-color-warning-90: 255 243 199;
+    /* Almost white amber */
+    --md-sys-color-warning-95: 255 251 235;
+    /* Nearly white amber */
+    --md-sys-color-warning-99: 255 254 251;
+    /* White with amber tint */
+    --md-sys-color-warning-100: 255 255 255;
+    /* Pure white */
 
     /* Material Design 3 Core Color Tokens (Light Theme) */
     --md-sys-color-primary: var(--md-sys-color-primary-40);
     --md-sys-color-on-primary: var(--md-sys-color-primary-100);
     --md-sys-color-primary-container: var(--md-sys-color-primary-90);
     --md-sys-color-on-primary-container: var(--md-sys-color-primary-10);
-    
+
     --md-sys-color-secondary: var(--md-sys-color-secondary-40);
     --md-sys-color-on-secondary: var(--md-sys-color-secondary-100);
     --md-sys-color-secondary-container: var(--md-sys-color-secondary-90);
     --md-sys-color-on-secondary-container: var(--md-sys-color-secondary-10);
-    
+
     --md-sys-color-tertiary: var(--md-sys-color-tertiary-40);
     --md-sys-color-on-tertiary: var(--md-sys-color-tertiary-100);
     --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-90);
     --md-sys-color-on-tertiary-container: var(--md-sys-color-tertiary-10);
-    
+
     --md-sys-color-error: var(--md-sys-color-error-40);
     --md-sys-color-on-error: var(--md-sys-color-error-100);
     --md-sys-color-error-container: var(--md-sys-color-error-90);
     --md-sys-color-on-error-container: var(--md-sys-color-error-10);
-    
+
     --md-sys-color-warning: var(--md-sys-color-warning-40);
     --md-sys-color-on-warning: var(--md-sys-color-warning-10);
     --md-sys-color-warning-container: var(--md-sys-color-warning-90);
     --md-sys-color-on-warning-container: var(--md-sys-color-warning-10);
-    
+
     /* Material Design 3 Surface Colors - Google Authentic */
     --md-sys-color-surface: 254 254 254;
     /* Google surface white */
@@ -130,19 +195,19 @@
     /* Medium surface */
     --md-sys-color-surface-container-highest: 232 234 237;
     /* Highest elevation surface */
-    
+
     /* Material Design 3 Background Colors - Google Authentic */
     --md-sys-color-background: 248 249 250;
     /* Google light background #f8f9fa */
     --md-sys-color-on-background: 32 33 36;
     /* Google dark gray #202124 */
-    
+
     /* Material Design 3 Outline Colors */
     --md-sys-color-outline: 189 193 198;
     /* Light gray outline */
     --md-sys-color-outline-variant: 218 220 224;
     /* Very light gray outline */
-    
+
     /* Legacy color mappings for compatibility */
     --background: 255 255 255;
     --foreground: 32 33 36;
@@ -174,12 +239,17 @@
     --primary-muted: 26 115 232 / 0.08;
     /* Very light blue background */
 
-    /* Agent type colors */
-    --agent-llm: 217 89% 61%;
-    --agent-sequential: 142 76% 36%;
-    --agent-parallel: 45 100% 51%;
-    --agent-loop: 4 90% 58%;
-    --agent-tool: 262 83% 58%;
+    /* Agent type colors - Using Google Brand Colors */
+    --agent-llm: 217 91% 51%;
+    /* Google Blue #1a73e8 */
+    --agent-sequential: 145 63% 42%;
+    /* Google Green #34a853 */
+    --agent-parallel: 36 100% 44%;
+    /* Google Yellow #fbbc04 */
+    --agent-loop: 5 79% 57%;
+    /* Google Red #ea4335 */
+    --agent-tool: 174 100% 29%;
+    /* Google Teal #00796b */
 
     /* Material Design 3 Semantic Colors */
     --secondary: 244 248 252;
@@ -298,27 +368,27 @@
     --md-sys-color-on-primary: var(--md-sys-color-primary-20);
     --md-sys-color-primary-container: var(--md-sys-color-primary-30);
     --md-sys-color-on-primary-container: var(--md-sys-color-primary-90);
-    
+
     --md-sys-color-secondary: var(--md-sys-color-secondary-80);
     --md-sys-color-on-secondary: var(--md-sys-color-secondary-20);
     --md-sys-color-secondary-container: var(--md-sys-color-secondary-30);
     --md-sys-color-on-secondary-container: var(--md-sys-color-secondary-90);
-    
+
     --md-sys-color-tertiary: var(--md-sys-color-tertiary-80);
     --md-sys-color-on-tertiary: var(--md-sys-color-tertiary-20);
     --md-sys-color-tertiary-container: var(--md-sys-color-tertiary-30);
     --md-sys-color-on-tertiary-container: var(--md-sys-color-tertiary-90);
-    
+
     --md-sys-color-error: var(--md-sys-color-error-80);
     --md-sys-color-on-error: var(--md-sys-color-error-20);
     --md-sys-color-error-container: var(--md-sys-color-error-30);
     --md-sys-color-on-error-container: var(--md-sys-color-error-90);
-    
+
     --md-sys-color-warning: var(--md-sys-color-warning-80);
     --md-sys-color-on-warning: var(--md-sys-color-warning-20);
     --md-sys-color-warning-container: var(--md-sys-color-warning-30);
     --md-sys-color-on-warning-container: var(--md-sys-color-warning-90);
-    
+
     /* Material Design 3 Dark Surface Colors */
     --md-sys-color-surface: 16 20 24;
     /* Dark surface */
@@ -338,13 +408,13 @@
     /* Lighter dark surface */
     --md-sys-color-surface-container-highest: 32 37 44;
     /* Lightest dark surface */
-    
+
     /* Material Design 3 Dark Background Colors */
     --md-sys-color-background: 16 20 24;
     /* Dark background */
     --md-sys-color-on-background: 227 226 230;
     /* Light on background */
-    
+
     /* Material Design 3 Dark Outline Colors */
     --md-sys-color-outline: 145 148 158;
     /* Medium gray outline */
@@ -494,7 +564,20 @@
   }
 
   /* Force text visibility */
-  p, span, div, h1, h2, h3, h4, h5, h6, a, button, input, textarea, label {
+  p,
+  span,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  button,
+  input,
+  textarea,
+  label {
     color: currentColor !important;
     opacity: 1 !important;
   }
@@ -687,7 +770,7 @@
     button {
       @apply md-surface-container-highest md-text-on-surface border-md-sys-color-outline-variant/30;
       font-family: 'Roboto', sans-serif !important;
-      
+
       &:hover {
         @apply md-surface-container hover:md-elevation-1;
       }
@@ -703,12 +786,12 @@
   .react-flow__edge {
     stroke: rgb(var(--md-sys-color-primary)) !important;
     stroke-width: 2px;
-    
+
     &.animated {
       stroke-dasharray: 5;
       animation: dashdraw 1s linear infinite;
     }
-    
+
     &.selected {
       stroke: rgb(var(--md-sys-color-tertiary)) !important;
       stroke-width: 3px;
@@ -721,26 +804,28 @@
     border: 2px solid rgb(var(--md-sys-color-surface)) !important;
     width: 10px !important;
     height: 10px !important;
-    
+
     &.react-flow__handle-right {
       right: -5px !important;
     }
-    
+
     &.react-flow__handle-left {
       left: -5px !important;
     }
-    
+
     &.react-flow__handle-top {
       top: -5px !important;
     }
-    
+
     &.react-flow__handle-bottom {
       bottom: -5px !important;
     }
   }
 
   /* Material Design 3 Base Background */
-  html, body, #root {
+  html,
+  body,
+  #root {
     background-color: rgb(var(--md-sys-color-surface-container-lowest)) !important;
   }
 
@@ -750,21 +835,54 @@
   }
 
   /* Allow Material Design surface colors to cascade naturally */
-  .md-surface-primary { background-color: rgb(var(--md-sys-color-primary)) !important; }
-  .md-surface-secondary { background-color: rgb(var(--md-sys-color-secondary)) !important; }
-  .md-surface-tertiary { background-color: rgb(var(--md-sys-color-tertiary)) !important; }
-  .md-surface-error { background-color: rgb(var(--md-sys-color-error)) !important; }
-  .md-surface-warning { background-color: rgb(var(--md-sys-color-warning)) !important; }
-  
+  .md-surface-primary {
+    background-color: rgb(var(--md-sys-color-primary)) !important;
+  }
+
+  .md-surface-secondary {
+    background-color: rgb(var(--md-sys-color-secondary)) !important;
+  }
+
+  .md-surface-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary)) !important;
+  }
+
+  .md-surface-error {
+    background-color: rgb(var(--md-sys-color-error)) !important;
+  }
+
+  .md-surface-warning {
+    background-color: rgb(var(--md-sys-color-warning)) !important;
+  }
+
   /* Material Design surface containers */
-  .md-surface-container-lowest { background-color: rgb(var(--md-sys-color-surface-container-lowest)) !important; }
-  .md-surface-container-low { background-color: rgb(var(--md-sys-color-surface-container-low)) !important; }
-  .md-surface-container { background-color: rgb(var(--md-sys-color-surface-container)) !important; }
-  .md-surface-container-high { background-color: rgb(var(--md-sys-color-surface-container-high)) !important; }
-  .md-surface-container-highest { background-color: rgb(var(--md-sys-color-surface-container-highest)) !important; }
+  .md-surface-container-lowest {
+    background-color: rgb(var(--md-sys-color-surface-container-lowest)) !important;
+  }
+
+  .md-surface-container-low {
+    background-color: rgb(var(--md-sys-color-surface-container-low)) !important;
+  }
+
+  .md-surface-container {
+    background-color: rgb(var(--md-sys-color-surface-container)) !important;
+  }
+
+  .md-surface-container-high {
+    background-color: rgb(var(--md-sys-color-surface-container-high)) !important;
+  }
+
+  .md-surface-container-highest {
+    background-color: rgb(var(--md-sys-color-surface-container-highest)) !important;
+  }
 
   /* Component-specific surface overrides */
-  [class*="bg-md-sys-color"], [class*="md-bg-"], [class*="google-"], .bg-card, .bg-popover, .bg-surface {
+  [class*="bg-md-sys-color"],
+  [class*="md-bg-"],
+  [class*="google-"],
+  .bg-card,
+  .bg-popover,
+  .bg-surface {
     background-color: revert !important;
   }
 
@@ -961,121 +1079,323 @@
   }
 
   /* Material Design 3 Elevation Utilities */
-  .md-elevation-0 { 
+  .md-elevation-0 {
     box-shadow: var(--md-sys-elevation-0);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .md-elevation-1 { 
+
+  .md-elevation-1 {
     box-shadow: var(--md-sys-elevation-1);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .md-elevation-2 { 
+
+  .md-elevation-2 {
     box-shadow: var(--md-sys-elevation-2);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .md-elevation-3 { 
+
+  .md-elevation-3 {
     box-shadow: var(--md-sys-elevation-3);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .md-elevation-4 { 
+
+  .md-elevation-4 {
     box-shadow: var(--md-sys-elevation-4);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .md-elevation-5 { 
+
+  .md-elevation-5 {
     box-shadow: var(--md-sys-elevation-5);
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Material Design 3 Elevation Hover States */
-  .md-elevation-0:hover { box-shadow: var(--md-sys-elevation-1); }
-  .md-elevation-1:hover { box-shadow: var(--md-sys-elevation-2); }
-  .md-elevation-2:hover { box-shadow: var(--md-sys-elevation-3); }
-  .md-elevation-3:hover { box-shadow: var(--md-sys-elevation-4); }
-  .md-elevation-4:hover { box-shadow: var(--md-sys-elevation-5); }
-  .md-elevation-5:hover { box-shadow: var(--md-sys-elevation-5); }
+  .md-elevation-0:hover {
+    box-shadow: var(--md-sys-elevation-1);
+  }
+
+  .md-elevation-1:hover {
+    box-shadow: var(--md-sys-elevation-2);
+  }
+
+  .md-elevation-2:hover {
+    box-shadow: var(--md-sys-elevation-3);
+  }
+
+  .md-elevation-3:hover {
+    box-shadow: var(--md-sys-elevation-4);
+  }
+
+  .md-elevation-4:hover {
+    box-shadow: var(--md-sys-elevation-5);
+  }
+
+  .md-elevation-5:hover {
+    box-shadow: var(--md-sys-elevation-5);
+  }
 
   /* Material Design 3 Elevation Focus States */
-  .md-elevation-0:focus-visible { box-shadow: var(--md-sys-elevation-1); }
-  .md-elevation-1:focus-visible { box-shadow: var(--md-sys-elevation-2); }
-  .md-elevation-2:focus-visible { box-shadow: var(--md-sys-elevation-3); }
-  .md-elevation-3:focus-visible { box-shadow: var(--md-sys-elevation-4); }
-  .md-elevation-4:focus-visible { box-shadow: var(--md-sys-elevation-5); }
-  .md-elevation-5:focus-visible { box-shadow: var(--md-sys-elevation-5); }
+  .md-elevation-0:focus-visible {
+    box-shadow: var(--md-sys-elevation-1);
+  }
+
+  .md-elevation-1:focus-visible {
+    box-shadow: var(--md-sys-elevation-2);
+  }
+
+  .md-elevation-2:focus-visible {
+    box-shadow: var(--md-sys-elevation-3);
+  }
+
+  .md-elevation-3:focus-visible {
+    box-shadow: var(--md-sys-elevation-4);
+  }
+
+  .md-elevation-4:focus-visible {
+    box-shadow: var(--md-sys-elevation-5);
+  }
+
+  .md-elevation-5:focus-visible {
+    box-shadow: var(--md-sys-elevation-5);
+  }
 
   /* Material Design 3 Semantic Color Utilities */
-  
+
   /* Primary Color Utilities */
-  .md-bg-primary { background-color: rgb(var(--md-sys-color-primary)); }
-  .md-text-primary { color: rgb(var(--md-sys-color-primary)); }
-  .md-bg-on-primary { background-color: rgb(var(--md-sys-color-on-primary)); }
-  .md-text-on-primary { color: rgb(var(--md-sys-color-on-primary)); }
-  .md-bg-primary-container { background-color: rgb(var(--md-sys-color-primary-container)); }
-  .md-text-primary-container { color: rgb(var(--md-sys-color-primary-container)); }
-  .md-bg-on-primary-container { background-color: rgb(var(--md-sys-color-on-primary-container)); }
-  .md-text-on-primary-container { color: rgb(var(--md-sys-color-on-primary-container)); }
+  .md-bg-primary {
+    background-color: rgb(var(--md-sys-color-primary));
+  }
+
+  .md-text-primary {
+    color: rgb(var(--md-sys-color-primary));
+  }
+
+  .md-bg-on-primary {
+    background-color: rgb(var(--md-sys-color-on-primary));
+  }
+
+  .md-text-on-primary {
+    color: rgb(var(--md-sys-color-on-primary));
+  }
+
+  .md-bg-primary-container {
+    background-color: rgb(var(--md-sys-color-primary-container));
+  }
+
+  .md-text-primary-container {
+    color: rgb(var(--md-sys-color-primary-container));
+  }
+
+  .md-bg-on-primary-container {
+    background-color: rgb(var(--md-sys-color-on-primary-container));
+  }
+
+  .md-text-on-primary-container {
+    color: rgb(var(--md-sys-color-on-primary-container));
+  }
 
   /* Secondary Color Utilities */
-  .md-bg-secondary { background-color: rgb(var(--md-sys-color-secondary)); }
-  .md-text-secondary { color: rgb(var(--md-sys-color-secondary)); }
-  .md-bg-on-secondary { background-color: rgb(var(--md-sys-color-on-secondary)); }
-  .md-text-on-secondary { color: rgb(var(--md-sys-color-on-secondary)); }
-  .md-bg-secondary-container { background-color: rgb(var(--md-sys-color-secondary-container)); }
-  .md-text-secondary-container { color: rgb(var(--md-sys-color-secondary-container)); }
-  .md-bg-on-secondary-container { background-color: rgb(var(--md-sys-color-on-secondary-container)); }
-  .md-text-on-secondary-container { color: rgb(var(--md-sys-color-on-secondary-container)); }
+  .md-bg-secondary {
+    background-color: rgb(var(--md-sys-color-secondary));
+  }
+
+  .md-text-secondary {
+    color: rgb(var(--md-sys-color-secondary));
+  }
+
+  .md-bg-on-secondary {
+    background-color: rgb(var(--md-sys-color-on-secondary));
+  }
+
+  .md-text-on-secondary {
+    color: rgb(var(--md-sys-color-on-secondary));
+  }
+
+  .md-bg-secondary-container {
+    background-color: rgb(var(--md-sys-color-secondary-container));
+  }
+
+  .md-text-secondary-container {
+    color: rgb(var(--md-sys-color-secondary-container));
+  }
+
+  .md-bg-on-secondary-container {
+    background-color: rgb(var(--md-sys-color-on-secondary-container));
+  }
+
+  .md-text-on-secondary-container {
+    color: rgb(var(--md-sys-color-on-secondary-container));
+  }
 
   /* Tertiary Color Utilities */
-  .md-bg-tertiary { background-color: rgb(var(--md-sys-color-tertiary)); }
-  .md-text-tertiary { color: rgb(var(--md-sys-color-tertiary)); }
-  .md-bg-on-tertiary { background-color: rgb(var(--md-sys-color-on-tertiary)); }
-  .md-text-on-tertiary { color: rgb(var(--md-sys-color-on-tertiary)); }
-  .md-bg-tertiary-container { background-color: rgb(var(--md-sys-color-tertiary-container)); }
-  .md-text-tertiary-container { color: rgb(var(--md-sys-color-tertiary-container)); }
-  .md-bg-on-tertiary-container { background-color: rgb(var(--md-sys-color-on-tertiary-container)); }
-  .md-text-on-tertiary-container { color: rgb(var(--md-sys-color-on-tertiary-container)); }
+  .md-bg-tertiary {
+    background-color: rgb(var(--md-sys-color-tertiary));
+  }
+
+  .md-text-tertiary {
+    color: rgb(var(--md-sys-color-tertiary));
+  }
+
+  .md-bg-on-tertiary {
+    background-color: rgb(var(--md-sys-color-on-tertiary));
+  }
+
+  .md-text-on-tertiary {
+    color: rgb(var(--md-sys-color-on-tertiary));
+  }
+
+  .md-bg-tertiary-container {
+    background-color: rgb(var(--md-sys-color-tertiary-container));
+  }
+
+  .md-text-tertiary-container {
+    color: rgb(var(--md-sys-color-tertiary-container));
+  }
+
+  .md-bg-on-tertiary-container {
+    background-color: rgb(var(--md-sys-color-on-tertiary-container));
+  }
+
+  .md-text-on-tertiary-container {
+    color: rgb(var(--md-sys-color-on-tertiary-container));
+  }
 
   /* Error Color Utilities */
-  .md-bg-error { background-color: rgb(var(--md-sys-color-error)); }
-  .md-text-error { color: rgb(var(--md-sys-color-error)); }
-  .md-bg-on-error { background-color: rgb(var(--md-sys-color-on-error)); }
-  .md-text-on-error { color: rgb(var(--md-sys-color-on-error)); }
-  .md-bg-error-container { background-color: rgb(var(--md-sys-color-error-container)); }
-  .md-text-error-container { color: rgb(var(--md-sys-color-error-container)); }
-  .md-bg-on-error-container { background-color: rgb(var(--md-sys-color-on-error-container)); }
-  .md-text-on-error-container { color: rgb(var(--md-sys-color-on-error-container)); }
+  .md-bg-error {
+    background-color: rgb(var(--md-sys-color-error));
+  }
+
+  .md-text-error {
+    color: rgb(var(--md-sys-color-error));
+  }
+
+  .md-bg-on-error {
+    background-color: rgb(var(--md-sys-color-on-error));
+  }
+
+  .md-text-on-error {
+    color: rgb(var(--md-sys-color-on-error));
+  }
+
+  .md-bg-error-container {
+    background-color: rgb(var(--md-sys-color-error-container));
+  }
+
+  .md-text-error-container {
+    color: rgb(var(--md-sys-color-error-container));
+  }
+
+  .md-bg-on-error-container {
+    background-color: rgb(var(--md-sys-color-on-error-container));
+  }
+
+  .md-text-on-error-container {
+    color: rgb(var(--md-sys-color-on-error-container));
+  }
 
   /* Warning Color Utilities */
-  .md-bg-warning { background-color: rgb(var(--md-sys-color-warning)); }
-  .md-text-warning { color: rgb(var(--md-sys-color-warning)); }
-  .md-bg-on-warning { background-color: rgb(var(--md-sys-color-on-warning)); }
-  .md-text-on-warning { color: rgb(var(--md-sys-color-on-warning)); }
-  .md-bg-warning-container { background-color: rgb(var(--md-sys-color-warning-container)); }
-  .md-text-warning-container { color: rgb(var(--md-sys-color-warning-container)); }
-  .md-bg-on-warning-container { background-color: rgb(var(--md-sys-color-on-warning-container)); }
-  .md-text-on-warning-container { color: rgb(var(--md-sys-color-on-warning-container)); }
+  .md-bg-warning {
+    background-color: rgb(var(--md-sys-color-warning));
+  }
+
+  .md-text-warning {
+    color: rgb(var(--md-sys-color-warning));
+  }
+
+  .md-bg-on-warning {
+    background-color: rgb(var(--md-sys-color-on-warning));
+  }
+
+  .md-text-on-warning {
+    color: rgb(var(--md-sys-color-on-warning));
+  }
+
+  .md-bg-warning-container {
+    background-color: rgb(var(--md-sys-color-warning-container));
+  }
+
+  .md-text-warning-container {
+    color: rgb(var(--md-sys-color-warning-container));
+  }
+
+  .md-bg-on-warning-container {
+    background-color: rgb(var(--md-sys-color-on-warning-container));
+  }
+
+  .md-text-on-warning-container {
+    color: rgb(var(--md-sys-color-on-warning-container));
+  }
 
   /* Surface Color Utilities */
-  .md-bg-surface { background-color: rgb(var(--md-sys-color-surface)); }
-  .md-text-surface { color: rgb(var(--md-sys-color-surface)); }
-  .md-bg-on-surface { background-color: rgb(var(--md-sys-color-on-surface)); }
-  .md-text-on-surface { color: rgb(var(--md-sys-color-on-surface)); }
-  .md-bg-surface-variant { background-color: rgb(var(--md-sys-color-surface-variant)); }
-  .md-text-surface-variant { color: rgb(var(--md-sys-color-surface-variant)); }
-  .md-bg-on-surface-variant { background-color: rgb(var(--md-sys-color-on-surface-variant)); }
-  .md-text-on-surface-variant { color: rgb(var(--md-sys-color-on-surface-variant)); }
+  .md-bg-surface {
+    background-color: rgb(var(--md-sys-color-surface));
+  }
+
+  .md-text-surface {
+    color: rgb(var(--md-sys-color-surface));
+  }
+
+  .md-bg-on-surface {
+    background-color: rgb(var(--md-sys-color-on-surface));
+  }
+
+  .md-text-on-surface {
+    color: rgb(var(--md-sys-color-on-surface));
+  }
+
+  .md-bg-surface-variant {
+    background-color: rgb(var(--md-sys-color-surface-variant));
+  }
+
+  .md-text-surface-variant {
+    color: rgb(var(--md-sys-color-surface-variant));
+  }
+
+  .md-bg-on-surface-variant {
+    background-color: rgb(var(--md-sys-color-on-surface-variant));
+  }
+
+  .md-text-on-surface-variant {
+    color: rgb(var(--md-sys-color-on-surface-variant));
+  }
 
   /* Surface Container Utilities */
-  .md-bg-surface-container-lowest { background-color: rgb(var(--md-sys-color-surface-container-lowest)); }
-  .md-bg-surface-container-low { background-color: rgb(var(--md-sys-color-surface-container-low)); }
-  .md-bg-surface-container { background-color: rgb(var(--md-sys-color-surface-container)); }
-  .md-bg-surface-container-high { background-color: rgb(var(--md-sys-color-surface-container-high)); }
-  .md-bg-surface-container-highest { background-color: rgb(var(--md-sys-color-surface-container-highest)); }
+  .md-bg-surface-container-lowest {
+    background-color: rgb(var(--md-sys-color-surface-container-lowest));
+  }
+
+  .md-bg-surface-container-low {
+    background-color: rgb(var(--md-sys-color-surface-container-low));
+  }
+
+  .md-bg-surface-container {
+    background-color: rgb(var(--md-sys-color-surface-container));
+  }
+
+  .md-bg-surface-container-high {
+    background-color: rgb(var(--md-sys-color-surface-container-high));
+  }
+
+  .md-bg-surface-container-highest {
+    background-color: rgb(var(--md-sys-color-surface-container-highest));
+  }
 
   /* Background Color Utilities */
-  .md-bg-background { background-color: rgb(var(--md-sys-color-background)); }
-  .md-text-background { color: rgb(var(--md-sys-color-background)); }
-  .md-bg-on-background { background-color: rgb(var(--md-sys-color-on-background)); }
-  .md-text-on-background { color: rgb(var(--md-sys-color-on-background)); }
+  .md-bg-background {
+    background-color: rgb(var(--md-sys-color-background));
+  }
+
+  .md-text-background {
+    color: rgb(var(--md-sys-color-background));
+  }
+
+  .md-bg-on-background {
+    background-color: rgb(var(--md-sys-color-on-background));
+  }
+
+  .md-text-on-background {
+    color: rgb(var(--md-sys-color-on-background));
+  }
 
   /* Material Design 3 Interactive Elevation Classes */
   .md-interactive-elevation {
@@ -1129,32 +1449,48 @@
   .md-sheet {
     @apply md-elevation-4;
   }
-  
+
   /* Material Design 3 Component-specific classes */
   .md-text-field {
     @apply bg-md-sys-color-surface-container-highest text-md-sys-color-on-surface rounded-md border border-md-sys-color-outline focus:border-md-sys-color-primary focus:ring-2 focus:ring-md-sys-color-primary/20 transition-all duration-md-short2;
   }
-  
+
   .md-chip {
     @apply bg-md-sys-color-surface-container-low text-md-sys-color-on-surface-variant rounded-full px-3 py-1 text-sm font-roboto border border-md-sys-color-outline-variant hover:bg-md-sys-color-on-surface/8 transition-colors duration-md-short2;
   }
-  
+
   .md-navigation-item {
     @apply text-md-sys-color-on-surface-variant hover:text-md-sys-color-on-surface hover:bg-md-sys-color-on-surface/8 active:bg-md-sys-color-on-surface/12 rounded-lg px-3 py-2 transition-all duration-md-short2 font-roboto;
   }
-  
+
   .md-divider {
     @apply border-md-sys-color-outline-variant;
   }
-  
-  .md-bg-background { background-color: rgb(var(--md-sys-color-background)); }
-  .md-text-background { color: rgb(var(--md-sys-color-background)); }
-  .md-bg-on-background { background-color: rgb(var(--md-sys-color-on-background)); }
-  .md-text-on-background { color: rgb(var(--md-sys-color-on-background)); }
+
+  .md-bg-background {
+    background-color: rgb(var(--md-sys-color-background));
+  }
+
+  .md-text-background {
+    color: rgb(var(--md-sys-color-background));
+  }
+
+  .md-bg-on-background {
+    background-color: rgb(var(--md-sys-color-on-background));
+  }
+
+  .md-text-on-background {
+    color: rgb(var(--md-sys-color-on-background));
+  }
 
   /* Outline Color Utilities */
-  .md-border-outline { border-color: rgb(var(--md-sys-color-outline)); }
-  .md-border-outline-variant { border-color: rgb(var(--md-sys-color-outline-variant)); }
+  .md-border-outline {
+    border-color: rgb(var(--md-sys-color-outline));
+  }
+
+  .md-border-outline-variant {
+    border-color: rgb(var(--md-sys-color-outline-variant));
+  }
 
   /* Material Design 3 Surface Tint Utilities */
   .md-surface-tint-primary {
@@ -1235,29 +1571,34 @@
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500;
   }
 
-  /* Agent type colors with enhanced contrast */
+  /* Agent type colors with Google brand colors */
   .agent-llm {
-    border-color: hsl(219 87% 54%);
-    background: hsl(219 87% 54% / 0.05);
+    border-color: #1a73e8;
+    /* Google Blue */
+    background: rgba(26, 115, 232, 0.08);
   }
 
   .agent-sequential {
-    border-color: hsl(142 76% 36%);
-    background: hsl(142 76% 36% / 0.05);
+    border-color: #34a853;
+    /* Google Green */
+    background: rgba(52, 168, 83, 0.08);
   }
 
   .agent-parallel {
-    border-color: hsl(45 100% 51%);
-    background: hsl(45 100% 51% / 0.05);
+    border-color: #fbbc04;
+    /* Google Yellow */
+    background: rgba(251, 188, 4, 0.08);
   }
 
   .agent-loop {
-    border-color: hsl(4 90% 58%);
-    background: hsl(4 90% 58% / 0.05);
+    border-color: #ea4335;
+    /* Google Red */
+    background: rgba(234, 67, 53, 0.08);
   }
 
   .agent-tool {
-    border-color: hsl(262 83% 58%);
-    background: hsl(262 83% 58% / 0.05);
+    border-color: #00796b;
+    /* Google Teal */
+    background: rgba(0, 121, 107, 0.08);
   }
 }
