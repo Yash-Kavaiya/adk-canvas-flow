@@ -16,7 +16,7 @@ interface AgentConfigFormProps {
 }
 
 export const AgentConfigForm: React.FC<AgentConfigFormProps> = ({ config, onUpdate }) => {
-  const handleInputChange = (field: keyof AgentConfig, value: string | number | boolean | string[]) => {
+  const handleInputChange = (field: keyof AgentConfig, value: AgentConfig[keyof AgentConfig]) => {
     onUpdate({ [field]: value });
   };
 
