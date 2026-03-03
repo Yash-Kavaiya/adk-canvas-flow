@@ -1,73 +1,71 @@
-# Welcome to your Lovable project
+# ADK Canvas Flow
 
-## Project info
+A visual builder for designing **Google Agent Development Kit (ADK)** workflows on a drag‑and‑drop canvas. Create agent graphs, configure nodes, and export runnable Python scaffolds in seconds.
 
-**URL**: https://lovable.dev/projects/7df49e03-5c54-489d-9791-11df302f9252
+## ✨ Highlights
 
-## How can I edit this code?
+- **Drag & drop canvas** for building agent graphs with connections (React Flow)
+- **Component library**: LLM agents, workflow nodes (sequential/parallel/loop), and tool nodes
+- **Properties panel** to configure models, instructions, tools, and parameters
+- **Code generation** for ADK Python with one‑click copy/download
+- **Export bundle** (main.py + requirements.txt + Dockerfile)
+- **Test console** to simulate conversations and validate flows (UI‑level simulation)
 
-There are several ways of editing your application.
+> Note: The test console is a simulated runner for UI validation. It does not execute real ADK agents yet.
 
-**Use Lovable**
+## 🧱 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7df49e03-5c54-489d-9791-11df302f9252) and start prompting.
+- **Vite + React + TypeScript**
+- **Tailwind CSS + shadcn/ui** (Material‑style theming)
+- **React Flow** for canvas + graph edges
+- **Zustand** for state management
+- **Monaco Editor** for generated code view
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Getting Started
 
-**Use your preferred IDE**
+```bash
+# Install dependencies
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build & Preview
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## 🗂️ Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+  components/      # UI blocks, canvas, panels, nodes
+  pages/           # Route views
+  store/           # Zustand state + ADK model types
+  lib/             # Helpers
+```
 
-## What technologies are used for this project?
+## 🧪 What You Can Do Right Now
 
-This project is built with:
+- Build agent workflows with nodes + connections
+- Configure each node’s settings in the properties panel
+- Generate ADK‑style Python code
+- Export a deployable bundle (Python + Docker)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🛣️ Roadmap Ideas
 
-## How can I deploy this project?
+- Real ADK execution (local runner integration)
+- Import/export flow JSON
+- Templates for common agent patterns
+- Multi‑agent testing with real tool calls
 
-Simply open [Lovable](https://lovable.dev/projects/7df49e03-5c54-489d-9791-11df302f9252) and click on Share -> Publish.
+## 🤝 Contributing
 
-## Can I connect a custom domain to my Lovable project?
+PRs welcome. If you plan a large change, open an issue first to align on scope.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Built for rapid ADK prototyping and demos.
