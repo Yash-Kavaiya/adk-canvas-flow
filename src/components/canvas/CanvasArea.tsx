@@ -3,13 +3,16 @@ import {
   ReactFlow,
   Controls,
   Background,
-  useNodesState,
-  useEdgesState,
   addEdge,
+  applyNodeChanges,
+  applyEdgeChanges,
   Connection,
   Node,
   Edge,
+  NodeChange,
+  EdgeChange,
   NodeTypes,
+  ReactFlowInstance,
   BackgroundVariant,
   MiniMap,
 } from '@xyflow/react';
@@ -32,6 +35,7 @@ const getId = () => `node_${nodeId++}`;
 export const CanvasArea: React.FC = () => {
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [isDraggingOver, setIsDraggingOver] = React.useState(false);
+  const [reactFlowInstance, setReactFlowInstance] = React.useState<ReactFlowInstance | null>(null);
 
   const {
     nodes,
@@ -40,59 +44,36 @@ export const CanvasArea: React.FC = () => {
     setEdges,
     addNode,
     selectNode,
-    selectedNodeId
   } = useADKStore();
 
-  const [localNodes, setLocalNodes, onNodesChange] = useNodesState(nodes);
-  const [localEdges, setLocalEdges, onEdgesChange] = useEdgesState(edges);
+  const onNodesChange = useCallback(
+    (changes: NodeChange<Node>[]) => {
+      const updatedNodes = applyNodeChanges(changes, useADKStore.getState().nodes);
+      setNodes(updatedNodes);
+    },
+    [setNodes]
+  );
 
-  // Use refs to store previous values and prevent circular updates
-  const prevNodesRef = useRef(nodes);
-  const prevEdgesRef = useRef(edges);
-  const prevLocalNodesRef = useRef(localNodes);
-  const prevLocalEdgesRef = useRef(localEdges);
-
-  // Sync FROM store TO local (when store changes externally, e.g., addNode)
-  React.useEffect(() => {
-    if (nodes !== prevNodesRef.current) {
-      prevNodesRef.current = nodes;
-      setLocalNodes(nodes);
-    }
-  }, [nodes, setLocalNodes]);
-
-  React.useEffect(() => {
-    if (edges !== prevEdgesRef.current) {
-      prevEdgesRef.current = edges;
-      setLocalEdges(edges);
-    }
-  }, [edges, setLocalEdges]);
-
-  // Sync FROM local TO store (when React Flow changes nodes/edges)
-  React.useEffect(() => {
-    if (localNodes !== prevLocalNodesRef.current) {
-      prevLocalNodesRef.current = localNodes;
-      setNodes(localNodes);
-    }
-  }, [localNodes, setNodes]);
-
-  React.useEffect(() => {
-    if (localEdges !== prevLocalEdgesRef.current) {
-      prevLocalEdgesRef.current = localEdges;
-      setEdges(localEdges);
-    }
-  }, [localEdges, setEdges]);
+  const onEdgesChange = useCallback(
+    (changes: EdgeChange<Edge>[]) => {
+      const updatedEdges = applyEdgeChanges(changes, useADKStore.getState().edges);
+      setEdges(updatedEdges);
+    },
+    [setEdges]
+  );
 
   const onConnect = useCallback(
     (params: Connection) => {
+      const currentEdges = useADKStore.getState().edges;
       const newEdge = addEdge({
         ...params,
         type: 'smoothstep',
         animated: true,
         id: `edge_${Date.now()}`,
-      }, localEdges);
-      setLocalEdges(newEdge);
+      }, currentEdges);
+      setEdges(newEdge);
     },
-    [localEdges, setLocalEdges]
+    [setEdges]
   );
 
   const onDragOver = useCallback((event: React.DragEvent) => {
@@ -115,7 +96,7 @@ export const CanvasArea: React.FC = () => {
       setIsDraggingOver(false);
 
       const reactFlowBounds = reactFlowWrapper.current?.getBoundingClientRect();
-      if (!reactFlowBounds) return;
+      if (!reactFlowInstance && !reactFlowBounds) return;
 
       const componentData = event.dataTransfer.getData('application/reactflow');
       if (!componentData) return;
@@ -123,10 +104,18 @@ export const CanvasArea: React.FC = () => {
       try {
         const component: ComponentLibraryItem = JSON.parse(componentData);
 
-        const position = {
-          x: event.clientX - reactFlowBounds.left - 75,
-          y: event.clientY - reactFlowBounds.top - 40,
-        };
+        const position = reactFlowInstance
+          ? (() => {
+              const flowPosition = reactFlowInstance.screenToFlowPosition({
+                x: event.clientX,
+                y: event.clientY,
+              });
+              return { x: flowPosition.x - 75, y: flowPosition.y - 40 };
+            })()
+          : {
+              x: event.clientX - (reactFlowBounds?.left || 0) - 75,
+              y: event.clientY - (reactFlowBounds?.top || 0) - 40,
+            };
 
         const newNodeId = getId();
         const newConfig: AgentConfig = {
@@ -159,7 +148,7 @@ export const CanvasArea: React.FC = () => {
         console.error('Error parsing dropped component:', error);
       }
     },
-    [addNode, selectNode]
+    [addNode, reactFlowInstance, selectNode]
   );
 
   const getNodeType = (agentType: string): string => {
@@ -195,8 +184,8 @@ export const CanvasArea: React.FC = () => {
       ref={reactFlowWrapper}
     >
       <ReactFlow
-        nodes={localNodes}
-        edges={localEdges}
+        nodes={nodes}
+        edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
@@ -207,6 +196,10 @@ export const CanvasArea: React.FC = () => {
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
         fitView
+        fitViewOptions={{ padding: 0.2 }}
+        minZoom={0.2}
+        maxZoom={1.8}
+        onInit={setReactFlowInstance}
         className={`canvas-grid ${isDraggingOver ? 'drag-over' : ''}`}
         data-dropping={isDraggingOver}
       >
