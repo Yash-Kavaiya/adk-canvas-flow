@@ -21,7 +21,7 @@ export const ADKBuilder: React.FC = () => {
   }, [initializeComponentLibrary]);
 
   return (
-    <div className="adk-app-container w-full h-screen md-surface-container-lowest flex flex-col font-roboto overflow-hidden">
+    <div className="adk-app-container w-full h-screen md-surface-container-lowest flex flex-col font-roboto overflow-hidden bg-[radial-gradient(circle_at_8%_0%,rgba(66,133,244,0.14),transparent_40%),radial-gradient(circle_at_92%_6%,rgba(52,168,83,0.12),transparent_35%),rgb(var(--md-sys-color-surface-container-lowest))]">
       {/* Header */}
       <Header />
       

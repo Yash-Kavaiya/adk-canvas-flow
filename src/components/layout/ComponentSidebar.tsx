@@ -4,7 +4,6 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { GoogleButton } from '@/components/ui/google-button';
 
 interface ComponentSidebarProps {
   collapsed: boolean;
@@ -99,17 +98,17 @@ export const ComponentSidebar: React.FC<ComponentSidebarProps> = ({ collapsed })
 
   return (
     <div 
-      className={`md-surface-container-low border-r border-md-sys-color-outline-variant/30 transition-all duration-300 md-elevation-1 ${
+      className={`md-surface-container-low border-r border-md-sys-color-outline-variant/30 transition-all duration-300 md-elevation-1 bg-white/80 backdrop-blur-sm ${
         collapsed ? 'w-16' : 'w-72'
       }`}
     >
       <div className="h-full flex flex-col">
         {/* Header */}
-        <div className="p-4 border-b border-md-sys-color-outline-variant/30 md-surface-container">
+        <div className="p-4 border-b border-md-sys-color-outline-variant/30 md-surface-container-high">
           {!collapsed && (
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 md-surface-primary rounded-lg flex items-center justify-center md-elevation-1">
-                <span className="md-text-on-primary font-bold text-sm font-roboto">C</span>
+              <div className="w-8 h-8 bg-[#e8f0fe] rounded-lg flex items-center justify-center md-elevation-1 border border-[#d2e3fc]">
+                <span className="text-[#1a73e8] font-bold text-sm font-roboto">C</span>
               </div>
               <h2 className="font-semibold md-text-on-surface md-typescale-title-medium font-roboto">Component Library</h2>
             </div>
