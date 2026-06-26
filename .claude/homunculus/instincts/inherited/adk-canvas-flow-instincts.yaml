@@ -1,0 +1,376 @@
+# Instincts generated from https://github.com/Yash-Kavaiya/adk-canvas-flow
+# Generated: 2026-06-26T17:29:05.051Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: adk-canvas-flow-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix
+
+## Evidence
+
+- 1 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(ui): prevent disappearing canvas and improve node config UX
+
+---
+id: adk-canvas-flow-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Commit Length
+
+## Action
+
+Write moderate-length commit messages (~63 characters)
+
+## Evidence
+
+- Average commit message length: 63 chars
+- Based on 1 commits
+
+---
+id: adk-canvas-flow-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: adk-canvas-flow-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: adk-canvas-flow-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: adk-canvas-flow-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: components
+
+---
+id: adk-canvas-flow-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: adk-canvas-flow-instinct-file-naming
+trigger: "When creating a new file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct File Naming
+
+## Action
+
+Name the file using PascalCase (e.g., MyComponent.tsx)
+
+## Evidence
+
+- Pattern in namingConventions.files: PascalCase
+
+---
+id: adk-canvas-flow-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Function Naming
+
+## Action
+
+Use camelCase for the function name
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: adk-canvas-flow-instinct-class-naming
+trigger: "When creating a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Class Naming
+
+## Action
+
+Use PascalCase for the class name
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: adk-canvas-flow-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for the constant name
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: adk-canvas-flow-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Import Style
+
+## Action
+
+Use alias import style
+
+## Evidence
+
+- Pattern in importStyle: alias
+
+---
+id: adk-canvas-flow-instinct-export-style
+trigger: "When exporting modules or components"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: adk-canvas-flow-instinct-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Commit Format
+
+## Action
+
+Use the conventional commit format with the 'fix' prefix for bug fixes (e.g., fix(ui): ...)
+
+## Evidence
+
+- Pattern in commits.prefixes: fix
+- Seen in commit: fix(ui): prevent disappearing canvas and improve node config UX
+
+---
+id: adk-canvas-flow-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Commit Length
+
+## Action
+
+Keep the commit message concise, around 63 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 63
+
+---
+id: adk-canvas-flow-instinct-error-boundary
+trigger: "When handling errors in React components"
+confidence: 0.9
+domain: architecture
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Error Boundary
+
+## Action
+
+Use error boundaries for error handling
+
+## Evidence
+
+- Pattern in errorHandling.errorBoundaries: true
+
+---
+id: adk-canvas-flow-instinct-no-global-error-handler
+trigger: "When considering global error handling"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct No Global Error Handler
+
+## Action
+
+Do not implement a global error handler
+
+## Evidence
+
+- Pattern in errorHandling.globalHandler: false
+
+---
+id: adk-canvas-flow-instinct-test-location
+trigger: "When adding or organizing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Test Location
+
+## Action
+
+Place tests in a separate location from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
+---
+id: adk-canvas-flow-instinct-type-based-organization
+trigger: "When organizing modules or files"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: Yash-Kavaiya/adk-canvas-flow
+---
+
+# Adk Canvas Flow Instinct Type Based Organization
+
+## Action
+
+Organize by type (e.g., components, utils, etc.)
+
+## Evidence
+
+- Pattern in architecture.moduleOrganization: type-based
+
